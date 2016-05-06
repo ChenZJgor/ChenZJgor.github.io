@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CONTIKI应用之温湿度传感器DHT11驱动开发 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="参加学校的挑战杯比赛，我们小组的项目是基于CONTIKI系统的，使用CC2530平台，所以需要为传感器开发底层驱动。
+DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输出公用一个端口，对时序的要求比较高。
+在开发过程中我遇到了一下几个问题:
+
+关闭CONTIKI的看门狗才能在程序中调用单片机的IO口。原因可能是打开看门狗后不能用IAR的单步调试。（暂解决）
+用示波器捕捉波形发现，主机发送">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CONTIKI应用之温湿度传感器DHT11驱动开发">
+<meta property="og:url" content="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="参加学校的挑战杯比赛，我们小组的项目是基于CONTIKI系统的，使用CC2530平台，所以需要为传感器开发底层驱动。
+DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输出公用一个端口，对时序的要求比较高。
+在开发过程中我遇到了一下几个问题:
+
+关闭CONTIKI的看门狗才能在程序中调用单片机的IO口。原因可能是打开看门狗后不能用IAR的单步调试。（暂解决）
+用示波器捕捉波形发现，主机发送">
+<meta property="og:image" content="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/CONTIKI/images/DHT11%E8%BE%93%E5%87%BA%E2%80%9C1%E2%80%9D.jpg">
+<meta property="og:updated_time" content="2016-05-06T14:44:04.762Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CONTIKI应用之温湿度传感器DHT11驱动开发">
+<meta name="twitter:description" content="参加学校的挑战杯比赛，我们小组的项目是基于CONTIKI系统的，使用CC2530平台，所以需要为传感器开发底层驱动。
+DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输出公用一个端口，对时序的要求比较高。
+在开发过程中我遇到了一下几个问题:
+
+关闭CONTIKI的看门狗才能在程序中调用单片机的IO口。原因可能是打开看门狗后不能用IAR的单步调试。（暂解决）
+用示波器捕捉波形发现，主机发送">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/CONTIKI/images/DHT11%E8%BE%93%E5%87%BA%E2%80%9C1%E2%80%9D.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发/" class="article-date">
+  <time datetime="2016-05-06T14:32:10.894Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CONTIKI应用之温湿度传感器DHT11驱动开发
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>参加学校的挑战杯比赛，我们小组的项目是基于CONTIKI系统的，使用CC2530平台，所以需要为传感器开发底层驱动。</p>
+<p>DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输出公用一个端口，对时序的要求比较高。</p>
+<p>在开发过程中我遇到了一下几个问题:</p>
+<ol>
+<li>关闭CONTIKI的看门狗才能在程序中调用单片机的IO口。原因可能是打开看门狗后不能用IAR的单步调试。（暂解决）</li>
+<li>用示波器捕捉波形发现，主机发送开始信号后，DHT11没有进入采集模式，无数据输出。原因是驱动时序出错，当DHT11输出“1”时，没有先等DHT11拉低就进入了下一位的读取，导致整个时序出错。（已解决）<br><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/CONTIKI/images/DHT11%E8%BE%93%E5%87%BA%E2%80%9C1%E2%80%9D.jpg" alt="DHT11输出1"></li>
+</ol>
+<h3 id="在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I-O口设置，这方面出错的可能性很大。"><a href="#在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I-O口设置，这方面出错的可能性很大。" class="headerlink" title="在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I/O口设置，这方面出错的可能性很大。"></a><strong>在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I/O口设置，这方面出错的可能性很大。</strong></h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发/" data-id="cinvtoxcy000hbwfe3c0dk7u9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-驱动/">CONTIKI,驱动</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/06/CONTIKI/CONTIKI应用之IO口应用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CONTIKI应用之IO口应用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/06/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/12864-串口/">12864,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-I-O口/">CONTIKI,I/O口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-Ubuntu/">CONTIKI,Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-static和extern/">CONTIKI,static和extern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-串口/">CONTIKI,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-传感器驱动/">CONTIKI,传感器驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-网络/">CONTIKI,网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-驱动/">CONTIKI,驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT-for-Linux/">GIT for Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-IIC/">SSD1306,IIC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Source-Insight-中文/">Source Insight 中文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-分区/">Ubuntu,分区</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-命令/">Ubuntu,命令</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/12864-串口/" style="font-size: 10px;">12864,串口</a> <a href="/tags/CONTIKI-I-O口/" style="font-size: 10px;">CONTIKI,I/O口</a> <a href="/tags/CONTIKI-Ubuntu/" style="font-size: 10px;">CONTIKI,Ubuntu</a> <a href="/tags/CONTIKI-static和extern/" style="font-size: 10px;">CONTIKI,static和extern</a> <a href="/tags/CONTIKI-串口/" style="font-size: 10px;">CONTIKI,串口</a> <a href="/tags/CONTIKI-传感器驱动/" style="font-size: 10px;">CONTIKI,传感器驱动</a> <a href="/tags/CONTIKI-网络/" style="font-size: 10px;">CONTIKI,网络</a> <a href="/tags/CONTIKI-驱动/" style="font-size: 10px;">CONTIKI,驱动</a> <a href="/tags/GIT-for-Linux/" style="font-size: 10px;">GIT for Linux</a> <a href="/tags/SSD1306-IIC/" style="font-size: 10px;">SSD1306,IIC</a> <a href="/tags/SSD1306-SPI/" style="font-size: 10px;">SSD1306,SPI</a> <a href="/tags/Source-Insight-中文/" style="font-size: 10px;">Source Insight 中文</a> <a href="/tags/Ubuntu-分区/" style="font-size: 10px;">Ubuntu,分区</a> <a href="/tags/Ubuntu-命令/" style="font-size: 10px;">Ubuntu,命令</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/06/Ubuntu命令归纳/">Ubuntu命令归纳</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/06/Ubuntu分区大小调整/">Ubuntu分区大小调整</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/06/Source Insight显示中文/">Source Insight显示中文</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/06/GIT for Linux安装/">GIT for Linux安装</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/06/DEV/SSD1306的SPI协议/">SSD1306的SPI协议</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

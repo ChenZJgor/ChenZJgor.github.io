@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SSD1306的SPI协议 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="近段时间调试小尺寸的OLED显示屏，虽然是SPI协议，接口上却写着SCL和SDA。所以要注意的是这种集成模块的OLED并不是使用IIC协议，而是SPI协议，而且并不用管CS，接低电平即可。
+SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以每次传输可以不用去管CS，但没CS这几个IO就被独占了。从图上可以看到数据是在SCLK上升沿时被传入，高位在前。DC用于表示写入的是数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSD1306的SPI协议">
+<meta property="og:url" content="http://yoursite.com/2016/05/06/DEV/SSD1306的SPI协议/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="近段时间调试小尺寸的OLED显示屏，虽然是SPI协议，接口上却写着SCL和SDA。所以要注意的是这种集成模块的OLED并不是使用IIC协议，而是SPI协议，而且并不用管CS，接低电平即可。
+SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以每次传输可以不用去管CS，但没CS这几个IO就被独占了。从图上可以看到数据是在SCLK上升沿时被传入，高位在前。DC用于表示写入的是数据">
+<meta property="og:image" content="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/OLED.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/SSD1306SPI%E5%9B%9B%E7%BA%BF.png">
+<meta property="og:updated_time" content="2016-05-06T14:48:52.673Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SSD1306的SPI协议">
+<meta name="twitter:description" content="近段时间调试小尺寸的OLED显示屏，虽然是SPI协议，接口上却写着SCL和SDA。所以要注意的是这种集成模块的OLED并不是使用IIC协议，而是SPI协议，而且并不用管CS，接低电平即可。
+SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以每次传输可以不用去管CS，但没CS这几个IO就被独占了。从图上可以看到数据是在SCLK上升沿时被传入，高位在前。DC用于表示写入的是数据">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/OLED.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-DEV/SSD1306的SPI协议" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/DEV/SSD1306的SPI协议/" class="article-date">
+  <time datetime="2016-05-06T14:32:11.112Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SSD1306的SPI协议
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>近段时间调试小尺寸的OLED显示屏，虽然是SPI协议，接口上却写着SCL和SDA。所以要注意的是这种集成模块的OLED并不是使用IIC协议，而是SPI协议，而且并不用管CS，接低电平即可。<br><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/OLED.jpg" alt="OLED外观" title="OLED.jpg"></p>
+<p>SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以每次传输可以不用去管CS，但没CS这几个IO就被独占了。从图上可以看到数据是在SCLK上升沿时被传入，高位在前。DC用于表示写入的是数据还是指令，DC为低时是指令写入，DC为高时是数据写入。<br>128*64的OLED在SSD1306的控制下，被分成8个页，每个页有8行128列，每个列对应一个字节。<br><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/SSD1306SPI%E5%9B%9B%E7%BA%BF.png" alt="SSD1306SPI四线" title="SSD1306SPI四线.png"></p>
+<p><a href="http://www.eeboard.com/bbs/forum.php?mod=viewthread&amp;tid=22116" target="_blank" rel="external">参考网站</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/06/DEV/SSD1306的SPI协议/" data-id="cinvtoxdk0014bwfeabs4a9k2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/06/GIT for Linux安装/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          GIT for Linux安装
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/06/DEV/IIC协议(OLED_SSD1306)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">OLED(SSD1306驱动芯片)的IIC协议</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/12864-串口/">12864,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-I-O口/">CONTIKI,I/O口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-Ubuntu/">CONTIKI,Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-static和extern/">CONTIKI,static和extern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-串口/">CONTIKI,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-传感器驱动/">CONTIKI,传感器驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-网络/">CONTIKI,网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-驱动/">CONTIKI,驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT-for-Linux/">GIT for Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-IIC/">SSD1306,IIC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Source-Insight-中文/">Source Insight 中文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-分区/">Ubuntu,分区</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-命令/">Ubuntu,命令</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/12864-串口/" style="font-size: 10px;">12864,串口</a> <a href="/tags/CONTIKI-I-O口/" style="font-size: 10px;">CONTIKI,I/O口</a> <a href="/tags/CONTIKI-Ubuntu/" style="font-size: 10px;">CONTIKI,Ubuntu</a> <a href="/tags/CONTIKI-static和extern/" style="font-size: 10px;">CONTIKI,static和extern</a> <a href="/tags/CONTIKI-串口/" style="font-size: 10px;">CONTIKI,串口</a> <a href="/tags/CONTIKI-传感器驱动/" style="font-size: 10px;">CONTIKI,传感器驱动</a> <a href="/tags/CONTIKI-网络/" style="font-size: 10px;">CONTIKI,网络</a> <a href="/tags/CONTIKI-驱动/" style="font-size: 10px;">CONTIKI,驱动</a> <a href="/tags/GIT-for-Linux/" style="font-size: 10px;">GIT for Linux</a> <a href="/tags/SSD1306-IIC/" style="font-size: 10px;">SSD1306,IIC</a> <a href="/tags/SSD1306-SPI/" style="font-size: 10px;">SSD1306,SPI</a> <a href="/tags/Source-Insight-中文/" style="font-size: 10px;">Source Insight 中文</a> <a href="/tags/Ubuntu-分区/" style="font-size: 10px;">Ubuntu,分区</a> <a href="/tags/Ubuntu-命令/" style="font-size: 10px;">Ubuntu,命令</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/06/Ubuntu命令归纳/">Ubuntu命令归纳</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/06/Ubuntu分区大小调整/">Ubuntu分区大小调整</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/06/Source Insight显示中文/">Source Insight显示中文</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/06/GIT for Linux安装/">GIT for Linux安装</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/06/DEV/SSD1306的SPI协议/">SSD1306的SPI协议</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

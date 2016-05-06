@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-05-06T09:37:04.503Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu命令归纳</title>
+    <link href="http://yoursite.com/2016/05/06/Ubuntu%E5%91%BD%E4%BB%A4%E5%BD%92%E7%BA%B3/"/>
+    <id>http://yoursite.com/2016/05/06/Ubuntu命令归纳/</id>
+    <published>2016-05-06T14:32:11.326Z</published>
+    <updated>2016-05-06T09:37:04.503Z</updated>
+    
+    <content type="html">&lt;p&gt;近段时间在做CONTIKI系统应用开发，需要用到Ubuntu，所以把Ubuntu需要用到的命令记录下来，以便以后查询使用。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;解压命令&lt;br&gt;unzip \&lt;packagename\&gt;&lt;br&gt;tar -zxf \&lt;packagename\&gt;&lt;/packagename\&gt;&lt;/packagename\&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近段时间在做CONTIKI系统应用开发，需要用到Ubuntu，所以把Ubuntu需要用到的命令记录下来，以便以后查询使用。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;解压命令&lt;br&gt;unzip \&lt;packagename\&gt;&lt;br&gt;tar -zxf \&lt;packagename\&gt;&lt;/pac
+    
+    </summary>
+    
+    
+      <category term="Ubuntu,命令" scheme="http://yoursite.com/tags/Ubuntu-%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu分区大小调整</title>
+    <link href="http://yoursite.com/2016/05/06/Ubuntu%E5%88%86%E5%8C%BA%E5%A4%A7%E5%B0%8F%E8%B0%83%E6%95%B4/"/>
+    <id>http://yoursite.com/2016/05/06/Ubuntu分区大小调整/</id>
+    <published>2016-05-06T14:32:11.324Z</published>
+    <updated>2016-05-06T09:36:32.605Z</updated>
+    
+    <content type="html">&lt;p&gt;如果要调整系统分区，就要用到光盘版的GParted-LiveCD。&lt;/p&gt;
+&lt;p&gt;可能存在的问题：&lt;br&gt;可能会发生swap分区丢失的情况，可在终端中用“free -m”命令查看swap分区是否激活(是否显示容量)，如果未激活，可用“sudo mkswap /dev/sdaX”命令(X为swap分区的编号)进行激活，并将激活所得的UUID码替换掉“/etc/fstab”文件(需要管理员权限)中原来 swap分区的UUID编码，重启后即可自动激活挂载。&lt;/p&gt;
+&lt;p&gt;警告：对swap分区的激活操作及对fstab文件的修改应谨慎，必需仔细核对修改的值。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.linuxidc.com/Linux/2013-06/85747.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考网站1&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.linuxidc.com/Linux/2015-03/115027.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参看网站2&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果要调整系统分区，就要用到光盘版的GParted-LiveCD。&lt;/p&gt;
+&lt;p&gt;可能存在的问题：&lt;br&gt;可能会发生swap分区丢失的情况，可在终端中用“free -m”命令查看swap分区是否激活(是否显示容量)，如果未激活，可用“sudo mkswap /dev/sda
+    
+    </summary>
+    
+    
+      <category term="Ubuntu,分区" scheme="http://yoursite.com/tags/Ubuntu-%E5%88%86%E5%8C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Source Insight显示中文</title>
+    <link href="http://yoursite.com/2016/05/06/Source%20Insight%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/"/>
+    <id>http://yoursite.com/2016/05/06/Source Insight显示中文/</id>
+    <published>2016-05-06T14:32:11.322Z</published>
+    <updated>2016-04-10T03:53:17.454Z</updated>
+    
+    <content type="html">&lt;p&gt;source insight 中文注释为乱码解决&lt;/p&gt;
+&lt;p&gt;source insight 阅读VC++源码，注释为乱码解决方案&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;options-&amp;gt;preferences-&amp;gt;Syntax Formatting-&amp;gt;Styles；&lt;/li&gt;
+&lt;li&gt;在Style Name 选择 Comment，再对其Font Name 选择Pick，然后再选择“新宋体”，编码选择GB2312。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;source insight 中文注释为乱码解决&lt;/p&gt;
+&lt;p&gt;source insight 阅读VC++源码，注释为乱码解决方案&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;options-&amp;gt;preferences-&amp;gt;Syntax Formatting-&amp;gt;Styles；&lt;
+    
+    </summary>
+    
+    
+      <category term="Source Insight 中文" scheme="http://yoursite.com/tags/Source-Insight-%E4%B8%AD%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GIT for Linux安装</title>
+    <link href="http://yoursite.com/2016/05/06/GIT%20for%20Linux%E5%AE%89%E8%A3%85/"/>
+    <id>http://yoursite.com/2016/05/06/GIT for Linux安装/</id>
+    <published>2016-05-06T14:32:11.320Z</published>
+    <updated>2016-05-06T09:35:50.081Z</updated>
+    
+    <content type="html">&lt;p&gt;因为最近在做CONTIKI系统应用的开发，要用到GIT。在Ubuntu上安装GIT时遇到一个问题，编译的时候报错&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Writing perl.mak for Git
+make[2]: *** [perl.mak] Error 1
+make[1]: *** [instlibdir] Error 2
+make: *** [git-add--interactive] Error 2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;一开始以为是缺少环境，几次检查后确定没有问题。最后发现是系统时间设置错误，系统的时间早于版本的时间，在时间正确设置后，问题解决。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因为最近在做CONTIKI系统应用的开发，要用到GIT。在Ubuntu上安装GIT时遇到一个问题，编译的时候报错&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Writing perl.mak for Git
+make[2]: *** [perl.mak] Error 1
+make[1]:
+    
+    </summary>
+    
+    
+      <category term="GIT for Linux" scheme="http://yoursite.com/tags/GIT-for-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SSD1306的SPI协议</title>
+    <link href="http://yoursite.com/2016/05/06/DEV/SSD1306%E7%9A%84SPI%E5%8D%8F%E8%AE%AE/"/>
+    <id>http://yoursite.com/2016/05/06/DEV/SSD1306的SPI协议/</id>
+    <published>2016-05-06T14:32:11.112Z</published>
+    <updated>2016-05-06T14:48:52.673Z</updated>
+    
+    <content type="html">&lt;p&gt;近段时间调试小尺寸的OLED显示屏，虽然是SPI协议，接口上却写着SCL和SDA。所以要注意的是这种集成模块的OLED并不是使用IIC协议，而是SPI协议，而且并不用管CS，接低电平即可。&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/OLED.jpg&quot; alt=&quot;OLED外观&quot; title=&quot;OLED.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以每次传输可以不用去管CS，但没CS这几个IO就被独占了。从图上可以看到数据是在SCLK上升沿时被传入，高位在前。DC用于表示写入的是数据还是指令，DC为低时是指令写入，DC为高时是数据写入。&lt;br&gt;128*64的OLED在SSD1306的控制下，被分成8个页，每个页有8行128列，每个列对应一个字节。&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/SSD1306SPI%E5%9B%9B%E7%BA%BF.png&quot; alt=&quot;SSD1306SPI四线&quot; title=&quot;SSD1306SPI四线.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.eeboard.com/bbs/forum.php?mod=viewthread&amp;amp;tid=22116&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考网站&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近段时间调试小尺寸的OLED显示屏，虽然是SPI协议，接口上却写着SCL和SDA。所以要注意的是这种集成模块的OLED并不是使用IIC协议，而是SPI协议，而且并不用管CS，接低电平即可。&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent
+    
+    </summary>
+    
+    
+      <category term="SSD1306,SPI" scheme="http://yoursite.com/tags/SSD1306-SPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OLED(SSD1306驱动芯片)的IIC协议</title>
+    <link href="http://yoursite.com/2016/05/06/DEV/IIC%E5%8D%8F%E8%AE%AE(OLED_SSD1306)/"/>
+    <id>http://yoursite.com/2016/05/06/DEV/IIC协议(OLED_SSD1306)/</id>
+    <published>2016-05-06T14:32:11.095Z</published>
+    <updated>2016-05-06T14:48:32.562Z</updated>
+    
+    <content type="html">&lt;p&gt;下面是OLED(SSD1306驱动芯片)IIC协议的摘要中文翻译&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;SCL和SDA都要接上拉电阻&lt;/li&gt;
+&lt;li&gt;数据传输中SDA只能在SCL为低时转变，在SCL为高时必须保持不变&lt;/li&gt;
+&lt;li&gt;RES接口用于设备初始化&lt;/li&gt;
+&lt;li&gt;DC接口作为从设备选择位，当R/W为1时是读取模式，R/W为0时是写入模式。 &lt;pre&gt;&lt;code&gt;![从设备地址示意图][1]
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;ACK信号在一个SCL的高电平时输出，0为成功，1为失败&lt;/li&gt;
+&lt;li&gt;IIC写入的顺序&lt;br&gt;(1)开始信号&lt;br&gt;(2)从设备地址&lt;br&gt;(3)写入控制字节和数据字节。控制字节为CO+D/C+6个0。&lt;br&gt;如果CO为0，表示没有连续写入。&lt;br&gt;如果D/C为0，表示写入命令；D/C为1，表示写入数据，数据将储存在GDDRAM中，GDDRAM中的数据指针会自动加1&lt;br&gt;(4)每一次写入都会有ACK&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/IIC写入.jpg&quot; alt=&quot;IIC写入过程&quot;&gt;&lt;br&gt;(5)IIC开始信号为SDA由高到底，结束信号为由低到高，SCL都要为高&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/IIC%E9%80%9A%E8%AE%AF%E5%BC%80%E5%A7%8B.jpg&quot; alt=&quot;IIC开始与结束&quot; title=&quot;IIC通讯开始.jpg&quot;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;下面是OLED(SSD1306驱动芯片)IIC协议的摘要中文翻译&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;SCL和SDA都要接上拉电阻&lt;/li&gt;
+&lt;li&gt;数据传输中SDA只能在SCL为低时转变，在SCL为高时必须保持不变&lt;/li&gt;
+&lt;li&gt;RES接口用于设备初始化&lt;/li&gt;
+&lt;li&gt;DC
+    
+    </summary>
+    
+    
+      <category term="SSD1306,IIC" scheme="http://yoursite.com/tags/SSD1306-IIC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>12864LCD显示屏的串口协议</title>
+    <link href="http://yoursite.com/2016/05/06/DEV/12864LCD%E4%B8%B2%E5%8F%A3%E5%8D%8F%E8%AE%AE/"/>
+    <id>http://yoursite.com/2016/05/06/DEV/12864LCD串口协议/</id>
+    <published>2016-05-06T14:32:11.075Z</published>
+    <updated>2016-05-06T14:47:55.467Z</updated>
+    
+    <content type="html">&lt;p&gt;12864LCD显示屏可以选择使用串口还是并口模式&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/12864%E7%AB%AF%E5%8F%A3%E5%AE%9A%E4%B9%89.jpg&quot; alt=&quot;12864端口定义&quot; title=&quot;12864端口定义.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如上图所示,PSB接地时12864采用串口模式。&lt;/p&gt;
+&lt;p&gt;所以当使用串口模式时，硬件的连接为：&lt;br&gt;GND,PSB,LED_K接地；VCC,VO,RS(CS),/RST,LED_A接+5V；&lt;br&gt;R/W(SID)接SPI数据口；E(CLK)接SPI时钟口。&lt;/p&gt;
+&lt;p&gt;12864LCD显示屏的数据分三个字节传输&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/12864%E4%B8%B2%E5%8F%A3%E6%97%B6%E5%BA%8F.jpg&quot; alt=&quot;12864LCD串行时序&quot; title=&quot;12864串口时序.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;(1)控制字节，控制数据传输方向和数据类型&lt;br&gt;(2)8位数据的高4位&lt;br&gt;(3)8位数据的低4位&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://bbs.elecfans.com/jishu_407275_1_1.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考网站&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;12864LCD显示屏可以选择使用串口还是并口模式&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/12864%E7%AB%AF%E5%8F%A
+    
+    </summary>
+    
+    
+      <category term="12864,串口" scheme="http://yoursite.com/tags/12864-%E4%B8%B2%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CONTIKI应用之网络功能应用</title>
+    <link href="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8B%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8/"/>
+    <id>http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之网络应用/</id>
+    <published>2016-05-06T14:32:10.945Z</published>
+    <updated>2016-04-18T16:06:02.690Z</updated>
+    
+    <content type="html">&lt;p&gt;学校挑战杯项目是关于物联网的，需要用到CONTIKI系统的网络功能。在开发过程中遇到不少问题，所以把问题记录下来，以便以后总结。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用contiki-wsn2530dk例程里的第9个“RPL-Collect”时“Sink”节点不调用collect_common_set_send_active()函数就不能接受节点的数据。&lt;br&gt;因为在Contiki2.7中send_active变量初始化为0，需要调用collect_common_set_send_active()给send_active变量赋值为1。而Contiki3.0中send_active变量初始化为1，并不需要再赋值。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;uip_ipaddr_copy(&amp;amp;server_conn-&amp;gt;ripaddr, &amp;amp;clientipaddr);
+uip_udp_packet_send(server_conn, &amp;quot;GET&amp;quot;, sizeof(&amp;quot;GET&amp;quot;));
+uip_create_unspecified(&amp;amp;server_conn-&amp;gt;ripaddr);&lt;/code&gt;&lt;br&gt;主机给节点发送数据需要用到上面的函数，而用&lt;br&gt;`          uip_udp_packet_sendto(server_conn, buf, strlen(buf),&lt;pre&gt;&lt;code&gt;&amp;amp;clientipaddr, UIP_HTONS(UDP_CLIENT_PORT));`
+&lt;/code&gt;&lt;/pre&gt;这个函数却不能把数据发送的节点，原因暂时不明。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;学校挑战杯项目是关于物联网的，需要用到CONTIKI系统的网络功能。在开发过程中遇到不少问题，所以把问题记录下来，以便以后总结。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用contiki-wsn2530dk例程里的第9个“RPL-Collect”时“Sink”节点不调用collect_c
+    
+    </summary>
+    
+    
+      <category term="CONTIKI,网络" scheme="http://yoursite.com/tags/CONTIKI-%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CONTIKI应用之传感器驱动编写</title>
+    <link href="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8B%E4%BC%A0%E6%84%9F%E5%99%A8%E9%A9%B1%E5%8A%A8%E7%BC%96%E5%86%99/"/>
+    <id>http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之传感器驱动编写/</id>
+    <published>2016-05-06T14:32:10.926Z</published>
+    <updated>2016-05-06T09:34:14.765Z</updated>
+    
+    <content type="html">&lt;p&gt;在用CONTIKI系统做开发时，免不了编写各种传感器的驱动。现把开发时遇到的问题和得出的经验记录下来，以便以后总结。&lt;/p&gt;
+&lt;p&gt;CONTIKI系统的传感器驱动都封装在sensor这个结构体内&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;struct sensors_sensor {
+    char *       type; //传感器名称
+    int          (* value)     (int type); //指向读取传感器数据函数的指针
+    int          (* configure) (int type, int value); //指向传感器配置函数的指针
+    int          (* status)    (int type); //指向读取传感器状态函数的指针
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在编写完传感器的驱动程序后，必须通过宏定义声明各个函数&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SENSORS_SENSOR(button_1_sensor, BUTTON_SENSOR, value_b1, configure_b1, status_b1);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;并且在”smartrf-sensors.c”的结构体中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const struct sensors_sensor *sensors[] = {
+#if ADC_SENSOR_ON
+&amp;amp;adc_sensor,
+#endif
+#if BUTTON_SENSOR_ON
+&amp;amp;button_1_sensor,
+#if MODELS_CONF_CC2531_USB_STICK
+&amp;amp;button_2_sensor,
+#endif
+#endif
+0
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;添加你所编写的驱动的名称。&lt;/p&gt;
+&lt;p&gt;系统会在”sensors.c”中，搜索*sensors[]数组中的值&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;for(i = 0; sensors[i] != NULL; ++i) {
+    sensors_flags[i] = 0;
+    sensors[i]-&amp;gt;configure(SENSORS_HW_INIT, 0);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;用”sensors_changed”函数标记传感器事件的发生，并传递给用户程序。&lt;/p&gt;
+&lt;p&gt;用”sensors_find”函数查找传感器驱动&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sensor =(struct sensors_sensor *) sensors_find(ADC_SENSOR);
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在用CONTIKI系统做开发时，免不了编写各种传感器的驱动。现把开发时遇到的问题和得出的经验记录下来，以便以后总结。&lt;/p&gt;
+&lt;p&gt;CONTIKI系统的传感器驱动都封装在sensor这个结构体内&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;struct sensors_sensor {
+
+    
+    </summary>
+    
+    
+      <category term="CONTIKI,传感器驱动" scheme="http://yoursite.com/tags/CONTIKI-%E4%BC%A0%E6%84%9F%E5%99%A8%E9%A9%B1%E5%8A%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CONTIKI应用之串口应用</title>
+    <link href="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8B%E4%B8%B2%E5%8F%A3%E5%BA%94%E7%94%A8/"/>
+    <id>http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之串口应用/</id>
+    <published>2016-05-06T14:32:10.923Z</published>
+    <updated>2016-05-06T14:46:18.883Z</updated>
+    
+    <content type="html">&lt;p&gt;在CONTIKI开发时经常用到串口，所以把遇到的问题记录下来，以便以后总结。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;CC2530的串口驱动有一个BUG，会导致串口不能接收数据，现已修正。serial-line.c是串口的驱动程序，里面有一个“int”类型的“c”变量用来判断是否收到串口数据，而ringbuf_get()函数是用来轮询串口是否有数据输入的，返回一个“int”类型的数值。“c”变量与ringbuf_get()函数的返回值必须是同类型的，而在原来的程序中两者的类型并不相等，导致数据溢出，不能进入串口数据处理进程。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/CONTIKI/images/CC2530%E5%B9%B3%E5%8F%B0%E4%B8%B2%E5%8F%A3BUG_1.jpg&quot; alt=&quot;CC2530平台串口BUG_1&quot; title=&quot;CC2530平台串口BUG_1.jpg&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/CONTIKI/images/CC2530%E5%B9%B3%E5%8F%B0%E4%B8%B2%E5%8F%A3BUG_2.jpg&quot; alt=&quot;CC2530平台串口BUG_2&quot; title=&quot;CC2530平台串口BUG_2.jpg&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在CONTIKI开发时经常用到串口，所以把遇到的问题记录下来，以便以后总结。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;CC2530的串口驱动有一个BUG，会导致串口不能接收数据，现已修正。serial-line.c是串口的驱动程序，里面有一个“int”类型的“c”变量用来判断是否收到串口
+    
+    </summary>
+    
+    
+      <category term="CONTIKI,串口" scheme="http://yoursite.com/tags/CONTIKI-%E4%B8%B2%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CONTIKI应用之Ubuntu环境下开发</title>
+    <link href="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BUbuntu%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%BC%80%E5%8F%91/"/>
+    <id>http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之Ubuntu环境下开发/</id>
+    <published>2016-05-06T14:32:10.921Z</published>
+    <updated>2016-05-06T09:33:34.065Z</updated>
+    
+    <content type="html">&lt;p&gt;CONTIKI系统默认是在Ubuntu下使用SDCC开发的，因为SDCC采用的是GCC编译器，与Windows下的IAR或KEIL还是有很大的不同。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用SDCC必须要写好Makefile文件，这样编译器才能在编译时找到相应的文件。&lt;/li&gt;
+&lt;li&gt;因为GCC编译器是使用标准C，所以在IAR上能编译成功不代表在SDCC上也能编译成功。例如我在编译时遇到一个问题，提示“变量初始化的值不能为变量”。这是因为标准C规定变量初始化时一定要为常量，如果要用变量赋值，必须要在函数或宏定义中。&lt;/li&gt;
+&lt;li&gt;因为CC2530的栈空间不够，所以CONTIKI系统CC2530平台上的UDP-IPV6例程有重启的问题。所以对于CC2530平台，在没有修改UIP协议栈的情况下，不能作为ROOT节点。解决方法是使用sensinode分支的源代码，该分支的版本是CONTIKI2.6，修改了部分文件的代码减少堆栈开销。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;CONTIKI系统默认是在Ubuntu下使用SDCC开发的，因为SDCC采用的是GCC编译器，与Windows下的IAR或KEIL还是有很大的不同。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用SDCC必须要写好Makefile文件，这样编译器才能在编译时找到相应的文件。&lt;/li&gt;
+&lt;l
+    
+    </summary>
+    
+    
+      <category term="CONTIKI,Ubuntu" scheme="http://yoursite.com/tags/CONTIKI-Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CONTIKI应用之static和extern的使用</title>
+    <link href="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8Bstatic%E5%92%8Cextern/"/>
+    <id>http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之static和extern/</id>
+    <published>2016-05-06T14:32:10.917Z</published>
+    <updated>2016-05-06T09:32:53.452Z</updated>
+    
+    <content type="html">&lt;p&gt;在Contiki进程中如果不用static声明变量，变量的值会在程序切换或退出时丢失。所以在编写Contiki用户程序时，如果需要变量的值一直保持，就必须在声明变量时用static。&lt;/p&gt;
+&lt;p&gt;但使用static后，声明的变量或函数只能在该文档中使用。如果你的变量需要在整个工程中使用，就不能用static，而是定义一个全局变量，在使用时再用extern声明。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Contiki进程中如果不用static声明变量，变量的值会在程序切换或退出时丢失。所以在编写Contiki用户程序时，如果需要变量的值一直保持，就必须在声明变量时用static。&lt;/p&gt;
+&lt;p&gt;但使用static后，声明的变量或函数只能在该文档中使用。如果你的变量需要在
+    
+    </summary>
+    
+    
+      <category term="CONTIKI,static和extern" scheme="http://yoursite.com/tags/CONTIKI-static%E5%92%8Cextern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CONTIKI应用之IO口应用</title>
+    <link href="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BIO%E5%8F%A3%E5%BA%94%E7%94%A8/"/>
+    <id>http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之IO口应用/</id>
+    <published>2016-05-06T14:32:10.914Z</published>
+    <updated>2016-05-06T09:31:51.639Z</updated>
+    
+    <content type="html">&lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
+&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port,pin)         PORT_CLEAR_X(port,pin) PORT_CLEAR_X(port,pin)
+#define PORT_TOGGLE(port,pin)        PORT_TOGGLE_X(port,pin) PORT_TOGGLE_X(port,pin)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;PORT_CLEAR和PORT_TOGGLE的宏定义错误。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
+&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port
+    
+    </summary>
+    
+    
+      <category term="CONTIKI,I/O口" scheme="http://yoursite.com/tags/CONTIKI-I-O%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CONTIKI应用之温湿度传感器DHT11驱动开发</title>
+    <link href="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BDHT11%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
+    <id>http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发/</id>
+    <published>2016-05-06T14:32:10.894Z</published>
+    <updated>2016-05-06T14:44:04.762Z</updated>
+    
+    <content type="html">&lt;p&gt;参加学校的挑战杯比赛，我们小组的项目是基于CONTIKI系统的，使用CC2530平台，所以需要为传感器开发底层驱动。&lt;/p&gt;
+&lt;p&gt;DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输出公用一个端口，对时序的要求比较高。&lt;/p&gt;
+&lt;p&gt;在开发过程中我遇到了一下几个问题:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;关闭CONTIKI的看门狗才能在程序中调用单片机的IO口。原因可能是打开看门狗后不能用IAR的单步调试。（暂解决）&lt;/li&gt;
+&lt;li&gt;用示波器捕捉波形发现，主机发送开始信号后，DHT11没有进入采集模式，无数据输出。原因是驱动时序出错，当DHT11输出“1”时，没有先等DHT11拉低就进入了下一位的读取，导致整个时序出错。（已解决）&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/CONTIKI/images/DHT11%E8%BE%93%E5%87%BA%E2%80%9C1%E2%80%9D.jpg&quot; alt=&quot;DHT11输出1&quot;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I-O口设置，这方面出错的可能性很大。&quot;&gt;&lt;a href=&quot;#在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I-O口设置，这方面出错的可能性很大。&quot; class=&quot;headerlink&quot; title=&quot;在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I/O口设置，这方面出错的可能性很大。&quot;&gt;&lt;/a&gt;&lt;strong&gt;在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I/O口设置，这方面出错的可能性很大。&lt;/strong&gt;&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;参加学校的挑战杯比赛，我们小组的项目是基于CONTIKI系统的，使用CC2530平台，所以需要为传感器开发底层驱动。&lt;/p&gt;
+&lt;p&gt;DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输出公用一个端口，对时序的要求比较高。&lt;/p&gt;
+&lt;p&gt;在开发过程中我遇到了一下几个问
+    
+    </summary>
+    
+    
+      <category term="CONTIKI,驱动" scheme="http://yoursite.com/tags/CONTIKI-%E9%A9%B1%E5%8A%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/05/06/hello-world/"/>
+    <id>http://yoursite.com/2016/05/06/hello-world/</id>
+    <published>2016-05-06T13:48:31.237Z</published>
+    <updated>2016-05-06T13:48:31.237Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
