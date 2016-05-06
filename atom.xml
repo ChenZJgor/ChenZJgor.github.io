@@ -152,14 +152,14 @@ make[1]:
     <link href="http://yoursite.com/2016/05/06/DEV/IIC%E5%8D%8F%E8%AE%AE(OLED_SSD1306)/"/>
     <id>http://yoursite.com/2016/05/06/DEV/IIC协议(OLED_SSD1306)/</id>
     <published>2016-05-06T14:32:11.095Z</published>
-    <updated>2016-05-06T14:48:32.562Z</updated>
+    <updated>2016-05-06T14:58:29.882Z</updated>
     
     <content type="html">&lt;p&gt;下面是OLED(SSD1306驱动芯片)IIC协议的摘要中文翻译&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;SCL和SDA都要接上拉电阻&lt;/li&gt;
 &lt;li&gt;数据传输中SDA只能在SCL为低时转变，在SCL为高时必须保持不变&lt;/li&gt;
 &lt;li&gt;RES接口用于设备初始化&lt;/li&gt;
-&lt;li&gt;DC接口作为从设备选择位，当R/W为1时是读取模式，R/W为0时是写入模式。 &lt;pre&gt;&lt;code&gt;![从设备地址示意图][1]
+&lt;li&gt;DC接口作为从设备选择位，当R/W为1时是读取模式，R/W为0时是写入模式。 &lt;pre&gt;&lt;code&gt;![从设备地址](https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/%E4%BB%8E%E8%AE%BE%E5%A4%87%E5%9C%B0%E5%9D%80.jpg)
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;ACK信号在一个SCL的高电平时输出，0为成功，1为失败&lt;/li&gt;
 &lt;li&gt;IIC写入的顺序&lt;br&gt;(1)开始信号&lt;br&gt;(2)从设备地址&lt;br&gt;(3)写入控制字节和数据字节。控制字节为CO+D/C+6个0。&lt;br&gt;如果CO为0，表示没有连续写入。&lt;br&gt;如果D/C为0，表示写入命令；D/C为1，表示写入数据，数据将储存在GDDRAM中，GDDRAM中的数据指针会自动加1&lt;br&gt;(4)每一次写入都会有ACK&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/IIC写入.jpg&quot; alt=&quot;IIC写入过程&quot;&gt;&lt;br&gt;(5)IIC开始信号为SDA由高到底，结束信号为由低到高，SCL都要为高&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/IIC%E9%80%9A%E8%AE%AF%E5%BC%80%E5%A7%8B.jpg&quot; alt=&quot;IIC开始与结束&quot; title=&quot;IIC通讯开始.jpg&quot;&gt;&lt;/li&gt;
