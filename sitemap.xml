@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/index/index.html</loc>
+    
+    <lastmod>2016-06-28T16:02:31.040Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/05/06/DEV/IIC%E5%8D%8F%E8%AE%AE(OLED_SSD1306)/</loc>
     
     <lastmod>2016-05-06T14:58:29.882Z</lastmod>
