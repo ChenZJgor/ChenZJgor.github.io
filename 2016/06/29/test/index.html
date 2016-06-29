@@ -3,24 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>CONTIKI应用之网络功能应用 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学校挑战杯项目是关于物联网的，需要用到CONTIKI系统的网络功能。在开发过程中遇到不少问题，所以把问题记录下来，以便以后总结。
-
-用contiki-wsn2530dk例程里的第9个“RPL-Collect”时“Sink”节点不调用collect_common_set_send_active()函数就不能接受节点的数据。因为在Contiki2.7中send_active变量初始化为0，需要调用co">
+  <meta name="description" content="ONLY TEST">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CONTIKI应用之网络功能应用">
-<meta property="og:url" content="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之网络应用/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2016/06/29/test/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="学校挑战杯项目是关于物联网的，需要用到CONTIKI系统的网络功能。在开发过程中遇到不少问题，所以把问题记录下来，以便以后总结。
-
-用contiki-wsn2530dk例程里的第9个“RPL-Collect”时“Sink”节点不调用collect_common_set_send_active()函数就不能接受节点的数据。因为在Contiki2.7中send_active变量初始化为0，需要调用co">
-<meta property="og:updated_time" content="2016-04-18T16:06:02.690Z">
+<meta property="og:description" content="ONLY TEST">
+<meta property="og:image" content="http://yoursite.com/./image/123.jpg">
+<meta property="og:image" content="http://yoursite.com/./image/123.png">
+<meta property="og:updated_time" content="2016-06-29T02:04:36.883Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CONTIKI应用之网络功能应用">
-<meta name="twitter:description" content="学校挑战杯项目是关于物联网的，需要用到CONTIKI系统的网络功能。在开发过程中遇到不少问题，所以把问题记录下来，以便以后总结。
-
-用contiki-wsn2530dk例程里的第9个“RPL-Collect”时“Sink”节点不调用collect_common_set_send_active()函数就不能接受节点的数据。因为在Contiki2.7中send_active变量初始化为0，需要调用co">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="ONLY TEST">
+<meta name="twitter:image" content="http://yoursite.com/./image/123.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -71,64 +68,36 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-CONTIKI/CONTIKI应用之网络应用" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/06/CONTIKI/CONTIKI应用之网络应用/" class="article-date">
-  <time datetime="2016-05-06T14:32:10.945Z" itemprop="datePublished">2016-05-06</time>
+    <a href="/2016/06/29/test/" class="article-date">
+  <time datetime="2016-06-29T02:00:53.605Z" itemprop="datePublished">2016-06-29</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      CONTIKI应用之网络功能应用
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>学校挑战杯项目是关于物联网的，需要用到CONTIKI系统的网络功能。在开发过程中遇到不少问题，所以把问题记录下来，以便以后总结。</p>
-<ol>
-<li>用contiki-wsn2530dk例程里的第9个“RPL-Collect”时“Sink”节点不调用collect_common_set_send_active()函数就不能接受节点的数据。<br>因为在Contiki2.7中send_active变量初始化为0，需要调用collect_common_set_send_active()给send_active变量赋值为1。而Contiki3.0中send_active变量初始化为1，并不需要再赋值。</li>
-<li><code>uip_ipaddr_copy(&amp;server_conn-&gt;ripaddr, &amp;clientipaddr);
-uip_udp_packet_send(server_conn, &quot;GET&quot;, sizeof(&quot;GET&quot;));
-uip_create_unspecified(&amp;server_conn-&gt;ripaddr);</code><br>主机给节点发送数据需要用到上面的函数，而用<br>`          uip_udp_packet_sendto(server_conn, buf, strlen(buf),<pre><code>&amp;clientipaddr, UIP_HTONS(UDP_CLIENT_PORT));`
-</code></pre>这个函数却不能把数据发送的节点，原因暂时不明。</li>
-</ol>
+        <p>ONLY TEST<br><img src="./image/123.jpg" alt="JPG" title="123.jpg"><br><img src="./image/123.png" alt="PNG" title="123.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之网络应用/" data-id="cipzmcx56000o08fec3kwy1m6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/29/test/" data-id="ciq08m3a80000rwfejp5bqje9" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-网络/">CONTIKI,网络</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2016/05/06/DEV/12864LCD串口协议/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          12864LCD显示屏的串口协议
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/06/CONTIKI/CONTIKI应用之传感器驱动编写/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/06/Ubuntu命令归纳/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">CONTIKI应用之传感器驱动编写</div>
+      <div class="article-nav-title">Ubuntu命令归纳</div>
     </a>
   
 </nav>
