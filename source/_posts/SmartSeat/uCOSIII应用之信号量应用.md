@@ -21,8 +21,5 @@ OSSemCreate ((OS_SEM*)	&ActiveSem,				//创建应变片激活状态信号量
 ```
 
  3. 相关指令
+![](/images/SmartSeat/uCOSIII信号量命令.jpg)
 
-![uCOSIII信号量命令][1]
-
-
-  [1]: /images/DEV/uCOSIII%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%91%BD%E4%BB%A4.jpg "uCOSIII信号量命令.jpg"

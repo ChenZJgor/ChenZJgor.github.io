@@ -66,6 +66,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-SmartSeat/电池电量检测" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/SmartSeat/电池电量检测/" class="article-date">
+  <time datetime="2016-09-06T15:17:32.830Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/SmartSeat/电池电量检测/">电池电量检测</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>电子设计大赛里设计了一个智能健康坐垫。该坐垫使用锂电池供电，所以必须用到电池电量检测，防止电池过放。</p>
+<p>我使用检测电池电压的方法推测电量，不能准确知道电池电量，不过可以设置一个阈值，防止电池过放。</p>
+<p>注意：</p>
+<ul>
+<li>分压电阻的值不能太大，1M以内，减少ADC内部的影响。</li>
+<li>不能大于单片机的最大检测电压。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/电池电量检测/" data-id="ciuh4g3gl0018k0fefyep1ljl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/电量检测/">电量检测</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-SmartSeat/uCOSIII应用之定时器应用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/09/06/SmartSeat/uCOSIII应用之定时器应用/" class="article-date">
@@ -109,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/uCOSIII应用之定时器应用/" data-id="ciuh1c24p001lo8fewahglsbi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/uCOSIII应用之定时器应用/" data-id="ciuh4g3gf0014k0fe02s6nmfl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/uCOSIII-定时器/">uCOSIII,定时器</a></li></ul>
@@ -121,10 +166,10 @@
 
 
   
-    <article id="post-SmartSeat/电池电量检测" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-SmartSeat/uCOSIII应用之信号量应用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/09/06/SmartSeat/电池电量检测/" class="article-date">
-  <time datetime="2016-09-06T15:17:32.830Z" itemprop="datePublished">2016-09-06</time>
+    <a href="/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/" class="article-date">
+  <time datetime="2016-09-06T15:17:32.814Z" itemprop="datePublished">2016-09-06</time>
 </a>
     
   </div>
@@ -135,7 +180,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/SmartSeat/电池电量检测/">电池电量检测</a>
+      <a class="article-title" href="/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/">uCOSIII应用之信号量应用</a>
     </h1>
   
 
@@ -143,21 +188,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>电子设计大赛里设计了一个智能健康坐垫。该坐垫使用锂电池供电，所以必须用到电池电量检测，防止电池过放。</p>
-<p>我使用检测电池电压的方法推测电量，不能准确知道电池电量，不过可以设置一个阈值，防止电池过放。</p>
-<p>注意：</p>
-<ul>
-<li>分压电阻的值不能太大，1M以内，减少ADC内部的影响。</li>
-<li>不能大于单片机的最大检测电压。</li>
-</ul>
+        <p>uCOSIII可以使用信号量，使用方法：</p>
+<ol>
+<li>创建信号量变量</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OS_SEM ActiveSem;		//激活信号量</span><br></pre></td></tr></table></figure>
+<ol>
+<li>创建信号量（创建前必须进入临界区）</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">OSSemCreate ((OS_SEM*)	&amp;ActiveSem,				//创建应变片激活状态信号量</span><br><span class="line">			   (CPU_CHAR*) "ActiveSem",</span><br><span class="line">			   (OS_SEM_CTR)0,</span><br><span class="line">			   (OS_ERR*)	&amp;err);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>相关指令<br><img src="/images/SmartSeat/uCOSIII信号量命令.jpg" alt=""></li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/电池电量检测/" data-id="ciuh1c24p001io8fekdewe9ec" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/" data-id="ciuh4g3gi0015k0fe35k7w9ri" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/电量检测/">电量检测</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/uCOSIII-信号量/">uCOSIII,信号量</a></li></ul>
 
     </footer>
   </div>
@@ -222,61 +272,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/uCOSIII应用/" data-id="ciuh1c24p001jo8fefvxsqka0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/uCOSIII应用/" data-id="ciuh4g3gc0012k0fe7ax4pftc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/uCOSIII-应用/">uCOSIII,应用</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-SmartSeat/uCOSIII应用之信号量应用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/" class="article-date">
-  <time datetime="2016-09-06T15:17:32.814Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/">uCOSIII应用之信号量应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>uCOSIII可以使用信号量，使用方法：</p>
-<ol>
-<li>创建信号量变量</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OS_SEM ActiveSem;		//激活信号量</span><br></pre></td></tr></table></figure>
-<ol>
-<li>创建信号量（创建前必须进入临界区）</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">OSSemCreate ((OS_SEM*)	&amp;ActiveSem,				//创建应变片激活状态信号量</span><br><span class="line">			   (CPU_CHAR*) "ActiveSem",</span><br><span class="line">			   (OS_SEM_CTR)0,</span><br><span class="line">			   (OS_ERR*)	&amp;err);</span><br></pre></td></tr></table></figure>
-<ol>
-<li>相关指令</li>
-</ol>
-<p><img src="/images/DEV/uCOSIII%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%91%BD%E4%BB%A4.jpg" alt="uCOSIII信号量命令" title="uCOSIII信号量命令.jpg"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/" data-id="ciuh1c24p001go8fex2sl6b2q" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/uCOSIII-信号量/">uCOSIII,信号量</a></li></ul>
 
     </footer>
   </div>
@@ -301,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/LM358应用/" data-id="ciuh1c24a0018o8fexnwc5vhk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/LM358应用/" data-id="ciuh4g3eg000ek0fe2b7pj4zc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -345,10 +344,49 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/Altium Designer/画板总结(二)/" data-id="ciuh1c24p001fo8feo9kh8sww" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/06/Altium Designer/画板总结(二)/" data-id="ciuh4g3f7000fk0fe233jrf0u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PCB板/">PCB板</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Altium Designer/Altium Designer设置敷铜安全距离" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/Altium Designer/Altium Designer设置敷铜安全距离/" class="article-date">
+  <time datetime="2016-09-06T15:17:32.736Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/Altium Designer/Altium Designer设置敷铜安全距离/">Altium Designer设置敷铜安全距离</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>设计-规则-electrical-clearance-选中右键-新规则-左键点中新规则-右边出现设置框-在上面的“where the first object matches”框下面的高级旁边，点“询问助手”-在右边“全部询问”处输入“Inpolygon” ，并修改最小间隔距离。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/Altium Designer/Altium Designer设置敷铜安全距离/" data-id="ciuh4g3fe000gk0febubs5qr3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Altium-Designer-敷铜安全距离/">Altium Designer,敷铜安全距离</a></li></ul>
 
     </footer>
   </div>
@@ -389,49 +427,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/Altium Designer/PCB板绘制经验总结/" data-id="ciuh1c24a001ao8feo8k36o6z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/06/Altium Designer/PCB板绘制经验总结/" data-id="ciuh4g3fg000ik0fed9rppluh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PCB板-经验总结/">PCB板 经验总结</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Altium Designer/Altium Designer设置敷铜安全距离" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/06/Altium Designer/Altium Designer设置敷铜安全距离/" class="article-date">
-  <time datetime="2016-09-06T15:17:32.736Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/Altium Designer/Altium Designer设置敷铜安全距离/">Altium Designer设置敷铜安全距离</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>设计-规则-electrical-clearance-选中右键-新规则-左键点中新规则-右边出现设置框-在上面的“where the first object matches”框下面的高级旁边，点“询问助手”-在右边“全部询问”处输入“Inpolygon” ，并修改最小间隔距离。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/Altium Designer/Altium Designer设置敷铜安全距离/" data-id="ciuh1c24a0019o8feci8vvv94" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Altium-Designer-敷铜安全距离/">Altium Designer,敷铜安全距离</a></li></ul>
 
     </footer>
   </div>
@@ -473,7 +472,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/Ubuntu命令归纳/" data-id="ciuh1c2180000o8ferwr44l6w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/06/Ubuntu命令归纳/" data-id="ciuh4g3e40007k0fenpuxr1ja" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu-命令/">Ubuntu,命令</a></li></ul>
@@ -515,7 +514,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/Ubuntu分区大小调整/" data-id="ciuh1c2230005o8fefrr8o600" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/06/Ubuntu分区大小调整/" data-id="ciuh4g3dy0004k0femep2rs97" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu-分区/">Ubuntu,分区</a></li></ul>
@@ -575,19 +574,19 @@
       <ul>
         
           <li>
-            <a href="/2016/09/06/SmartSeat/uCOSIII应用之定时器应用/">uCOSIII应用之定时器应用</a>
-          </li>
-        
-          <li>
             <a href="/2016/09/06/SmartSeat/电池电量检测/">电池电量检测</a>
           </li>
         
           <li>
-            <a href="/2016/09/06/SmartSeat/uCOSIII应用/">uCOSIII应用</a>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用之定时器应用/">uCOSIII应用之定时器应用</a>
           </li>
         
           <li>
             <a href="/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/">uCOSIII应用之信号量应用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用/">uCOSIII应用</a>
           </li>
         
           <li>

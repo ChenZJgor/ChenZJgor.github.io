@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-29T09:21:19.688Z</updated>
+  <updated>2016-08-28T09:27:04.777Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>电池电量检测</title>
+    <link href="http://yoursite.com/2016/09/06/SmartSeat/%E7%94%B5%E6%B1%A0%E7%94%B5%E9%87%8F%E6%A3%80%E6%B5%8B/"/>
+    <id>http://yoursite.com/2016/09/06/SmartSeat/电池电量检测/</id>
+    <published>2016-09-06T15:17:32.830Z</published>
+    <updated>2016-08-28T09:27:04.777Z</updated>
+    
+    <content type="html">&lt;p&gt;电子设计大赛里设计了一个智能健康坐垫。该坐垫使用锂电池供电，所以必须用到电池电量检测，防止电池过放。&lt;/p&gt;
+&lt;p&gt;我使用检测电池电压的方法推测电量，不能准确知道电池电量，不过可以设置一个阈值，防止电池过放。&lt;/p&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;分压电阻的值不能太大，1M以内，减少ADC内部的影响。&lt;/li&gt;
+&lt;li&gt;不能大于单片机的最大检测电压。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;电子设计大赛里设计了一个智能健康坐垫。该坐垫使用锂电池供电，所以必须用到电池电量检测，防止电池过放。&lt;/p&gt;
+&lt;p&gt;我使用检测电池电压的方法推测电量，不能准确知道电池电量，不过可以设置一个阈值，防止电池过放。&lt;/p&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;分压电阻的值不能
+    
+    </summary>
+    
+    
+      <category term="电量检测" scheme="http://yoursite.com/tags/%E7%94%B5%E9%87%8F%E6%A3%80%E6%B5%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>uCOSIII应用之定时器应用</title>
@@ -57,33 +88,38 @@
   </entry>
   
   <entry>
-    <title>电池电量检测</title>
-    <link href="http://yoursite.com/2016/09/06/SmartSeat/%E7%94%B5%E6%B1%A0%E7%94%B5%E9%87%8F%E6%A3%80%E6%B5%8B/"/>
-    <id>http://yoursite.com/2016/09/06/SmartSeat/电池电量检测/</id>
-    <published>2016-09-06T15:17:32.830Z</published>
-    <updated>2016-08-28T09:27:04.777Z</updated>
+    <title>uCOSIII应用之信号量应用</title>
+    <link href="http://yoursite.com/2016/09/06/SmartSeat/uCOSIII%E5%BA%94%E7%94%A8%E4%B9%8B%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%BA%94%E7%94%A8/"/>
+    <id>http://yoursite.com/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/</id>
+    <published>2016-09-06T15:17:32.814Z</published>
+    <updated>2016-10-19T16:17:29.732Z</updated>
     
-    <content type="html">&lt;p&gt;电子设计大赛里设计了一个智能健康坐垫。该坐垫使用锂电池供电，所以必须用到电池电量检测，防止电池过放。&lt;/p&gt;
-&lt;p&gt;我使用检测电池电压的方法推测电量，不能准确知道电池电量，不过可以设置一个阈值，防止电池过放。&lt;/p&gt;
-&lt;p&gt;注意：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;分压电阻的值不能太大，1M以内，减少ADC内部的影响。&lt;/li&gt;
-&lt;li&gt;不能大于单片机的最大检测电压。&lt;/li&gt;
-&lt;/ul&gt;
+    <content type="html">&lt;p&gt;uCOSIII可以使用信号量，使用方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;创建信号量变量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;OS_SEM ActiveSem;		//激活信号量&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;创建信号量（创建前必须进入临界区）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;OSSemCreate ((OS_SEM*)	&amp;amp;ActiveSem,				//创建应变片激活状态信号量&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			   (CPU_CHAR*) &quot;ActiveSem&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			   (OS_SEM_CTR)0,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			   (OS_ERR*)	&amp;amp;err);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;相关指令&lt;br&gt;&lt;img src=&quot;/images/SmartSeat/uCOSIII信号量命令.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;电子设计大赛里设计了一个智能健康坐垫。该坐垫使用锂电池供电，所以必须用到电池电量检测，防止电池过放。&lt;/p&gt;
-&lt;p&gt;我使用检测电池电压的方法推测电量，不能准确知道电池电量，不过可以设置一个阈值，防止电池过放。&lt;/p&gt;
-&lt;p&gt;注意：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;分压电阻的值不能
+      &lt;p&gt;uCOSIII可以使用信号量，使用方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;创建信号量变量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/s
     
     </summary>
     
     
-      <category term="电量检测" scheme="http://yoursite.com/tags/%E7%94%B5%E9%87%8F%E6%A3%80%E6%B5%8B/"/>
+      <category term="uCOSIII,信号量" scheme="http://yoursite.com/tags/uCOSIII-%E4%BF%A1%E5%8F%B7%E9%87%8F/"/>
     
   </entry>
   
@@ -142,43 +178,6 @@
   </entry>
   
   <entry>
-    <title>uCOSIII应用之信号量应用</title>
-    <link href="http://yoursite.com/2016/09/06/SmartSeat/uCOSIII%E5%BA%94%E7%94%A8%E4%B9%8B%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%BA%94%E7%94%A8/"/>
-    <id>http://yoursite.com/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/</id>
-    <published>2016-09-06T15:17:32.814Z</published>
-    <updated>2016-10-19T15:42:41.957Z</updated>
-    
-    <content type="html">&lt;p&gt;uCOSIII可以使用信号量，使用方法：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;创建信号量变量&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;OS_SEM ActiveSem;		//激活信号量&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ol&gt;
-&lt;li&gt;创建信号量（创建前必须进入临界区）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;OSSemCreate ((OS_SEM*)	&amp;amp;ActiveSem,				//创建应变片激活状态信号量&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			   (CPU_CHAR*) &quot;ActiveSem&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			   (OS_SEM_CTR)0,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			   (OS_ERR*)	&amp;amp;err);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ol&gt;
-&lt;li&gt;相关指令&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;/images/DEV/uCOSIII%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%91%BD%E4%BB%A4.jpg&quot; alt=&quot;uCOSIII信号量命令&quot; title=&quot;uCOSIII信号量命令.jpg&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;uCOSIII可以使用信号量，使用方法：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;创建信号量变量&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/s
-    
-    </summary>
-    
-    
-      <category term="uCOSIII,信号量" scheme="http://yoursite.com/tags/uCOSIII-%E4%BF%A1%E5%8F%B7%E9%87%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title></title>
     <link href="http://yoursite.com/2016/09/06/SmartSeat/LM358%E5%BA%94%E7%94%A8/"/>
     <id>http://yoursite.com/2016/09/06/SmartSeat/LM358应用/</id>
@@ -225,6 +224,27 @@
   </entry>
   
   <entry>
+    <title>Altium Designer设置敷铜安全距离</title>
+    <link href="http://yoursite.com/2016/09/06/Altium%20Designer/Altium%20Designer%E8%AE%BE%E7%BD%AE%E6%95%B7%E9%93%9C%E5%AE%89%E5%85%A8%E8%B7%9D%E7%A6%BB/"/>
+    <id>http://yoursite.com/2016/09/06/Altium Designer/Altium Designer设置敷铜安全距离/</id>
+    <published>2016-09-06T15:17:32.736Z</published>
+    <updated>2016-07-13T12:24:01.939Z</updated>
+    
+    <content type="html">&lt;p&gt;设计-规则-electrical-clearance-选中右键-新规则-左键点中新规则-右边出现设置框-在上面的“where the first object matches”框下面的高级旁边，点“询问助手”-在右边“全部询问”处输入“Inpolygon” ，并修改最小间隔距离。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;设计-规则-electrical-clearance-选中右键-新规则-左键点中新规则-右边出现设置框-在上面的“where the first object matches”框下面的高级旁边，点“询问助手”-在右边“全部询问”处输入“Inpolygon” ，并修改最小间隔
+    
+    </summary>
+    
+    
+      <category term="Altium Designer,敷铜安全距离" scheme="http://yoursite.com/tags/Altium-Designer-%E6%95%B7%E9%93%9C%E5%AE%89%E5%85%A8%E8%B7%9D%E7%A6%BB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>PCB板绘制经验总结</title>
     <link href="http://yoursite.com/2016/09/06/Altium%20Designer/PCB%E6%9D%BF%E7%BB%98%E5%88%B6%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2016/09/06/Altium Designer/PCB板绘制经验总结/</id>
@@ -251,27 +271,6 @@
     
     
       <category term="PCB板 经验总结" scheme="http://yoursite.com/tags/PCB%E6%9D%BF-%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Altium Designer设置敷铜安全距离</title>
-    <link href="http://yoursite.com/2016/09/06/Altium%20Designer/Altium%20Designer%E8%AE%BE%E7%BD%AE%E6%95%B7%E9%93%9C%E5%AE%89%E5%85%A8%E8%B7%9D%E7%A6%BB/"/>
-    <id>http://yoursite.com/2016/09/06/Altium Designer/Altium Designer设置敷铜安全距离/</id>
-    <published>2016-09-06T15:17:32.736Z</published>
-    <updated>2016-07-13T12:24:01.939Z</updated>
-    
-    <content type="html">&lt;p&gt;设计-规则-electrical-clearance-选中右键-新规则-左键点中新规则-右边出现设置框-在上面的“where the first object matches”框下面的高级旁边，点“询问助手”-在右边“全部询问”处输入“Inpolygon” ，并修改最小间隔距离。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;设计-规则-electrical-clearance-选中右键-新规则-左键点中新规则-右边出现设置框-在上面的“where the first object matches”框下面的高级旁边，点“询问助手”-在右边“全部询问”处输入“Inpolygon” ，并修改最小间隔
-    
-    </summary>
-    
-    
-      <category term="Altium Designer,敷铜安全距离" scheme="http://yoursite.com/tags/Altium-Designer-%E6%95%B7%E9%93%9C%E5%AE%89%E5%85%A8%E8%B7%9D%E7%A6%BB/"/>
     
   </entry>
   
