@@ -66,6 +66,380 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-SmartSeat/uCOSIII应用之定时器应用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/SmartSeat/uCOSIII应用之定时器应用/" class="article-date">
+  <time datetime="2016-09-06T15:17:32.830Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/SmartSeat/uCOSIII应用之定时器应用/">uCOSIII应用之定时器应用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>uCOSIII系统的定时器可以实现定时（精度不高）。使用方法：</p>
+<ol>
+<li>创建定时器变量和声明回调函数</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">OS_TMR 	tmr_active;		//激活定时器</span><br><span class="line">void tmr_active_callback(void *p_tmr, void *p_arg); 	//激活定时器回调函数</span><br></pre></td></tr></table></figure>
+<ol>
+<li>创建定时器</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">	//创建应变片激活定时器</span><br><span class="line">OSTmrCreate((OS_TMR		*)&amp;tmr_active,		//激活定时器</span><br><span class="line">			(CPU_CHAR	*)"tmr active",		//定时器名字</span><br><span class="line">			(OS_TICK	 )0,			//0</span><br><span class="line">			(OS_TICK	 )100,          //100*10=1000ms</span><br><span class="line">			(OS_OPT		 )OS_OPT_TMR_PERIODIC, //周期模式</span><br><span class="line">			(OS_TMR_CALLBACK_PTR)tmr_active_callback,//激活定时器回调函数</span><br><span class="line">			(void	    *)0,			//参数为0</span><br><span class="line">			(OS_ERR	    *)&amp;err);		//返回的错误码</span><br></pre></td></tr></table></figure>
+<ol>
+<li>编写回调函数</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//激活定时器的回调函数</span></span><br><span class="line">void tmr_active_callback(void *p_tmr, void *p_arg)</span><br><span class="line">&#123;</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>启动、关闭定时器</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(1)OSTmrStart(&amp;tmr_active, &amp;err); //启动定时器</span><br><span class="line">(2)OSTmrStop (&amp;tmr_negative,OS_OPT_TMR_NONE,0,&amp;err); //关闭定时器</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/uCOSIII应用之定时器应用/" data-id="ciuh1c24p001lo8fewahglsbi" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/uCOSIII-定时器/">uCOSIII,定时器</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-SmartSeat/电池电量检测" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/SmartSeat/电池电量检测/" class="article-date">
+  <time datetime="2016-09-06T15:17:32.830Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/SmartSeat/电池电量检测/">电池电量检测</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>电子设计大赛里设计了一个智能健康坐垫。该坐垫使用锂电池供电，所以必须用到电池电量检测，防止电池过放。</p>
+<p>我使用检测电池电压的方法推测电量，不能准确知道电池电量，不过可以设置一个阈值，防止电池过放。</p>
+<p>注意：</p>
+<ul>
+<li>分压电阻的值不能太大，1M以内，减少ADC内部的影响。</li>
+<li>不能大于单片机的最大检测电压。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/电池电量检测/" data-id="ciuh1c24p001io8fekdewe9ec" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/电量检测/">电量检测</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-SmartSeat/uCOSIII应用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/SmartSeat/uCOSIII应用/" class="article-date">
+  <time datetime="2016-09-06T15:17:32.814Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/SmartSeat/uCOSIII应用/">uCOSIII应用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>智能坐垫的设计用到了uCOSIII实时操作系统。uCOSIII系统使用说明：</p>
+<ol>
+<li>创建任务块</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//任务优先级</span><br><span class="line">#define START_TASK_PRIO		3</span><br><span class="line">//任务堆栈大小	</span><br><span class="line">#define START_STK_SIZE 		512</span><br><span class="line">//任务控制块</span><br><span class="line">OS_TCB StartTaskTCB;</span><br><span class="line">//任务堆栈	</span><br><span class="line">CPU_STK START_TASK_STK[START_STK_SIZE];</span><br><span class="line">//任务函数</span><br><span class="line">void start_task(void *p_arg);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在main函数中初始化系统，创建START任务</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">OSInit(&amp;err);		//初始化UCOSIII</span><br><span class="line">OS_CRITICAL_ENTER();//进入临界区</span><br><span class="line">//创建开始任务</span><br><span class="line">OSTaskCreate((OS_TCB 	* )&amp;StartTaskTCB,		//任务控制块</span><br><span class="line">			 (CPU_CHAR	* )"start task", 		//任务名字</span><br><span class="line">			 (OS_TASK_PTR )start_task, 			//任务函数</span><br><span class="line">			 (void		* )0,					//传递给任务函数的参数</span><br><span class="line">			 (OS_PRIO	  )START_TASK_PRIO,     //任务优先级</span><br><span class="line">			 (CPU_STK   * )&amp;START_TASK_STK[0],	//任务堆栈基地址</span><br><span class="line">			 (CPU_STK_SIZE)START_STK_SIZE/10,	//任务堆栈深度限位</span><br><span class="line">			 (CPU_STK_SIZE)START_STK_SIZE,		//任务堆栈大小</span><br><span class="line">			 (OS_MSG_QTY  )0,					//任务内部消息队列能够接收的最大消息数目,为0时禁止接收消息</span><br><span class="line">			 (OS_TICK	  )0,					//当使能时间片轮转时的时间片长度，为0时为默认长度，</span><br><span class="line">			 (void   	* )0,					//用户补充的存储区</span><br><span class="line">			 (OS_OPT      )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR, //任务选项</span><br><span class="line">			 (OS_ERR 	* )&amp;err);				//存放该函数错误时的返回值</span><br><span class="line">OS_CRITICAL_EXIT();	//退出临界区	 </span><br><span class="line">OSStart(&amp;err);  //开启UCOSIII</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在START任务中进行系统设置<br>(1)统计任务、中断关闭时间测量、时间片轮转功能使能<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#if OS_CFG_STAT_TASK_EN &gt; 0u</span><br><span class="line">   OSStatTaskCPUUsageInit(&amp;err);  	//统计任务                </span><br><span class="line">#endif</span><br><span class="line">	</span><br><span class="line">#ifdef CPU_CFG_INT_DIS_MEAS_EN		//如果使能了测量中断关闭时间</span><br><span class="line">    CPU_IntDisMeasMaxCurReset();	</span><br><span class="line">#endif</span><br><span class="line">	</span><br><span class="line">#if	OS_CFG_SCHED_ROUND_ROBIN_EN  //当使用时间片轮转的时候</span><br><span class="line">	 //使能时间片轮转调度功能,时间片长度为1个系统时钟节拍，既1*5=5ms</span><br><span class="line">	OSSchedRoundRobinCfg(DEF_ENABLED,1,&amp;err);  </span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>(2)创建定时器(如果有使用)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">	//创建应变片激活定时器</span><br><span class="line">OSTmrCreate((OS_TMR		*)&amp;tmr_active,		//激活定时器</span><br><span class="line">			(CPU_CHAR	*)"tmr active",		//定时器名字</span><br><span class="line">			(OS_TICK	 )0,			//0</span><br><span class="line">			(OS_TICK	 )100,          //100*10=1000ms</span><br><span class="line">			(OS_OPT		 )OS_OPT_TMR_PERIODIC, //周期模式</span><br><span class="line">			(OS_TMR_CALLBACK_PTR)tmr_active_callback,//激活定时器回调函数</span><br><span class="line">			(void	    *)0,			//参数为0</span><br><span class="line">			(OS_ERR	    *)&amp;err);		//返回的错误码</span><br></pre></td></tr></table></figure>
+<p>(3)创建信号量和各任务(如果有使用)<br><strong>注意：创建之前必须进入临界区</strong><code>OS_CRITICAL_ENTER();    //进入临界区</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">OSSemCreate ((OS_SEM*)	&amp;ActiveSem,				//创建应变片激活状态信号量</span><br><span class="line">			   (CPU_CHAR*) "ActiveSem",</span><br><span class="line">			   (OS_SEM_CTR)0,</span><br><span class="line">			   (OS_ERR*)	&amp;err);</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//创建系统核心任务</span><br><span class="line">OSTaskCreate((OS_TCB 	* )&amp;CORETaskTCB,		</span><br><span class="line">			 (CPU_CHAR	* )"core task", 		</span><br><span class="line">			 (OS_TASK_PTR )core_task, 			</span><br><span class="line">			 (void		* )0,					</span><br><span class="line">			 (OS_PRIO	  )CORE_TASK_PRIO,     </span><br><span class="line">			 (CPU_STK   * )&amp;CORE_TASK_STK[0],	</span><br><span class="line">			 (CPU_STK_SIZE)CORE_STK_SIZE/10,	</span><br><span class="line">			 (CPU_STK_SIZE)CORE_STK_SIZE,		</span><br><span class="line">			 (OS_MSG_QTY  )0,					</span><br><span class="line">			 (OS_TICK	  )0,					</span><br><span class="line">			 (void   	* )0,					</span><br><span class="line">			 (OS_OPT      )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,</span><br><span class="line">			 (OS_ERR 	* )&amp;err);</span><br></pre></td></tr></table></figure>
+<p>(4)挂起任务和退出临界区</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">OS_TaskSuspend((OS_TCB*)&amp;StartTaskTCB,&amp;err);		//挂起开始任务			 </span><br><span class="line">OS_CRITICAL_EXIT();	//退出临界区</span><br></pre></td></tr></table></figure>
+<ol>
+<li>各任务函数编写</li>
+</ol>
+<p>每一个任务必须是死循环，在死循环中加入一个可以挂起任务的函数，以实现任务调度</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void active_task(void *p_arg)</span><br><span class="line">&#123;</span><br><span class="line">	OS_ERR err;</span><br><span class="line">	p_arg = p_arg;</span><br><span class="line">	</span><br><span class="line">	while(1)&#123;</span><br><span class="line">	</span><br><span class="line">	......</span><br><span class="line"></span><br><span class="line">		OSTimeDlyHMSM(0,0,1,0,OS_OPT_TIME_HMSM_STRICT,&amp;err); //延时1s</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>最后一个参数都是错误反馈</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/uCOSIII应用/" data-id="ciuh1c24p001jo8fefvxsqka0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/uCOSIII-应用/">uCOSIII,应用</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-SmartSeat/uCOSIII应用之信号量应用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/" class="article-date">
+  <time datetime="2016-09-06T15:17:32.814Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/">uCOSIII应用之信号量应用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>uCOSIII可以使用信号量，使用方法：</p>
+<ol>
+<li>创建信号量变量</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OS_SEM ActiveSem;		//激活信号量</span><br></pre></td></tr></table></figure>
+<ol>
+<li>创建信号量（创建前必须进入临界区）</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">OSSemCreate ((OS_SEM*)	&amp;ActiveSem,				//创建应变片激活状态信号量</span><br><span class="line">			   (CPU_CHAR*) "ActiveSem",</span><br><span class="line">			   (OS_SEM_CTR)0,</span><br><span class="line">			   (OS_ERR*)	&amp;err);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>相关指令</li>
+</ol>
+<p><img src="/images/DEV/uCOSIII%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%91%BD%E4%BB%A4.jpg" alt="uCOSIII信号量命令" title="uCOSIII信号量命令.jpg"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/" data-id="ciuh1c24p001go8fex2sl6b2q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/uCOSIII-信号量/">uCOSIII,信号量</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-SmartSeat/LM358应用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/SmartSeat/LM358应用/" class="article-date">
+  <time datetime="2016-09-06T15:17:32.814Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/SmartSeat/LM358应用/" data-id="ciuh1c24a0018o8fexnwc5vhk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Altium Designer/画板总结(二)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/Altium Designer/画板总结(二)/" class="article-date">
+  <time datetime="2016-09-06T15:17:32.736Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/Altium Designer/画板总结(二)/">画板总结（电子设计竞赛画板总结）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在2016广东大学生电子设计竞赛中，因为比赛需要画了一块电源板。虽然已多次检查，但还是出现了一个严重的错误，USB接口的电源和地定义反了（由于使用的是之前项目使用过的MicroUSB接口封装，并没有仔细检查）。</p>
+<p>而且有个别焊盘也偏小，焊接的时候不方便</p>
+<p>画板后的检查过程：</p>
+<ol>
+<li>对照官方PDF文档，检查器件封装是否有错。</li>
+<li>检查焊盘大小，最好对照实物，有现成的库的尽量用现成的库，最好不要自己画。如果没有现成库，尽量把焊盘画得大些，像贴片电感、电容画得比实物尺寸长1mm都可以。</li>
+<li>最后检查走线，线宽、线距是否足够，接地是否用敷铜等。这主要是依照经验值及芯片文档说明。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/Altium Designer/画板总结(二)/" data-id="ciuh1c24p001fo8feo9kh8sww" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PCB板/">PCB板</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Altium Designer/PCB板绘制经验总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/Altium Designer/PCB板绘制经验总结/" class="article-date">
+  <time datetime="2016-09-06T15:17:32.736Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/Altium Designer/PCB板绘制经验总结/">PCB板绘制经验总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>此文记录PCB板绘制过程中总结的经验和规则</p>
+<ol>
+<li>过孔直径一般小于0.5mm，焊盘直径比过孔直径一般大0.3mm。</li>
+<li>线路的安全距离，电源线可以适当加大，信号线可以稍小。</li>
+<li>绘制贴片元件封装时，焊盘大小要比手册上的尺寸稍大，芯片封装的焊盘可加长0.5mm，电感、电容之类的器件封装可加长1mm，便于手工焊接。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/Altium Designer/PCB板绘制经验总结/" data-id="ciuh1c24a001ao8feo8k36o6z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PCB板-经验总结/">PCB板 经验总结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Altium Designer/Altium Designer设置敷铜安全距离" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/Altium Designer/Altium Designer设置敷铜安全距离/" class="article-date">
+  <time datetime="2016-09-06T15:17:32.736Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/Altium Designer/Altium Designer设置敷铜安全距离/">Altium Designer设置敷铜安全距离</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>设计-规则-electrical-clearance-选中右键-新规则-左键点中新规则-右边出现设置框-在上面的“where the first object matches”框下面的高级旁边，点“询问助手”-在右边“全部询问”处输入“Inpolygon” ，并修改最小间隔距离。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/Altium Designer/Altium Designer设置敷铜安全距离/" data-id="ciuh1c24a0019o8feci8vvv94" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Altium-Designer-敷铜安全距离/">Altium Designer,敷铜安全距离</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Ubuntu命令归纳" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/06/Ubuntu命令归纳/" class="article-date">
@@ -90,13 +464,16 @@
       
         <p>近段时间在做CONTIKI系统应用开发，需要用到Ubuntu，所以把Ubuntu需要用到的命令记录下来，以便以后查询使用。</p>
 <ol>
-<li>解压命令<br>unzip \<packagename\><br>tar -zxf \<packagename\></packagename\></packagename\></li>
+<li><p>解压命令</p>
+<p>unzip <packagename\></packagename\></p>
+<p>tar -zxf <packagename\></packagename\></p>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/Ubuntu命令归纳/" data-id="cipzmcx3t000608fei6y9pku0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/06/Ubuntu命令归纳/" data-id="ciuh1c2180000o8ferwr44l6w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu-命令/">Ubuntu,命令</a></li></ul>
@@ -138,7 +515,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/Ubuntu分区大小调整/" data-id="cipzmcx3q000508fedqi4iy69" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/06/Ubuntu分区大小调整/" data-id="ciuh1c2230005o8fefrr8o600" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu-分区/">Ubuntu,分区</a></li></ul>
@@ -150,392 +527,10 @@
 
 
   
-    <article id="post-Source Insight显示中文" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/06/Source Insight显示中文/" class="article-date">
-  <time datetime="2016-05-06T14:32:11.322Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/Source Insight显示中文/">Source Insight显示中文</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>source insight 中文注释为乱码解决</p>
-<p>source insight 阅读VC++源码，注释为乱码解决方案</p>
-<ol>
-<li>options-&gt;preferences-&gt;Syntax Formatting-&gt;Styles；</li>
-<li>在Style Name 选择 Comment，再对其Font Name 选择Pick，然后再选择“新宋体”，编码选择GB2312。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/Source Insight显示中文/" data-id="cipzmcx3j000208fet77ejdi3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Source-Insight-中文/">Source Insight 中文</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-GIT for Linux安装" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/06/GIT for Linux安装/" class="article-date">
-  <time datetime="2016-05-06T14:32:11.320Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/GIT for Linux安装/">GIT for Linux安装</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>因为最近在做CONTIKI系统应用的开发，要用到GIT。在Ubuntu上安装GIT时遇到一个问题，编译的时候报错</p>
-<pre><code>Writing perl.mak for Git
-make[2]: *** [perl.mak] Error 1
-make[1]: *** [instlibdir] Error 2
-make: *** [git-add--interactive] Error 2
-</code></pre><p>一开始以为是缺少环境，几次检查后确定没有问题。最后发现是系统时间设置错误，系统的时间早于版本的时间，在时间正确设置后，问题解决。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/GIT for Linux安装/" data-id="cipzmcx3c000008feu3qb4ot2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GIT-for-Linux/">GIT for Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-DEV/SSD1306的SPI协议" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/06/DEV/SSD1306的SPI协议/" class="article-date">
-  <time datetime="2016-05-06T14:32:11.112Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/DEV/SSD1306的SPI协议/">SSD1306的SPI协议</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>近段时间调试小尺寸的OLED显示屏，虽然是SPI协议，接口上却写着SCL和SDA。所以要注意的是这种集成模块的OLED并不是使用IIC协议，而是SPI协议，而且并不用管CS，接低电平即可。<br><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/OLED.jpg" alt="OLED外观" title="OLED.jpg"></p>
-<p>SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以每次传输可以不用去管CS，但没CS这几个IO就被独占了。从图上可以看到数据是在SCLK上升沿时被传入，高位在前。DC用于表示写入的是数据还是指令，DC为低时是指令写入，DC为高时是数据写入。<br>128*64的OLED在SSD1306的控制下，被分成8个页，每个页有8行128列，每个列对应一个字节。<br><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/SSD1306SPI%E5%9B%9B%E7%BA%BF.png" alt="SSD1306SPI四线" title="SSD1306SPI四线.png"></p>
-<p><a href="http://www.eeboard.com/bbs/forum.php?mod=viewthread&amp;tid=22116" target="_blank" rel="external">参考网站</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/DEV/SSD1306的SPI协议/" data-id="cipzmcx5d000u08fens6dc4la" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-DEV/IIC协议(OLED_SSD1306)" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/06/DEV/IIC协议(OLED_SSD1306)/" class="article-date">
-  <time datetime="2016-05-06T14:32:11.095Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/DEV/IIC协议(OLED_SSD1306)/">OLED(SSD1306驱动芯片)的IIC协议</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>下面是OLED(SSD1306驱动芯片)IIC协议的摘要中文翻译</p>
-<ol>
-<li>SCL和SDA都要接上拉电阻</li>
-<li>数据传输中SDA只能在SCL为低时转变，在SCL为高时必须保持不变</li>
-<li>RES接口用于设备初始化</li>
-<li>DC接口作为从设备选择位，当R/W为1时是读取模式，R/W为0时是写入模式。 <pre><code>![从设备地址](https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/%E4%BB%8E%E8%AE%BE%E5%A4%87%E5%9C%B0%E5%9D%80.jpg)
-</code></pre></li>
-<li>ACK信号在一个SCL的高电平时输出，0为成功，1为失败</li>
-<li>IIC写入的顺序<br>(1)开始信号<br>(2)从设备地址<br>(3)写入控制字节和数据字节。控制字节为CO+D/C+6个0。<br>如果CO为0，表示没有连续写入。<br>如果D/C为0，表示写入命令；D/C为1，表示写入数据，数据将储存在GDDRAM中，GDDRAM中的数据指针会自动加1<br>(4)每一次写入都会有ACK<br><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/IIC写入.jpg" alt="IIC写入过程"><br>(5)IIC开始信号为SDA由高到底，结束信号为由低到高，SCL都要为高<br><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/IIC%E9%80%9A%E8%AE%AF%E5%BC%80%E5%A7%8B.jpg" alt="IIC开始与结束" title="IIC通讯开始.jpg"></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/DEV/IIC协议(OLED_SSD1306)/" data-id="cipzmcx5c000s08fezmozwa8n" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSD1306-IIC/">SSD1306,IIC</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-DEV/12864LCD串口协议" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/06/DEV/12864LCD串口协议/" class="article-date">
-  <time datetime="2016-05-06T14:32:11.075Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/DEV/12864LCD串口协议/">12864LCD显示屏的串口协议</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>12864LCD显示屏可以选择使用串口还是并口模式</p>
-<p><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/12864%E7%AB%AF%E5%8F%A3%E5%AE%9A%E4%B9%89.jpg" alt="12864端口定义" title="12864端口定义.jpg"></p>
-<p>如上图所示,PSB接地时12864采用串口模式。</p>
-<p>所以当使用串口模式时，硬件的连接为：<br>GND,PSB,LED_K接地；VCC,VO,RS(CS),/RST,LED_A接+5V；<br>R/W(SID)接SPI数据口；E(CLK)接SPI时钟口。</p>
-<p>12864LCD显示屏的数据分三个字节传输</p>
-<p><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/12864%E4%B8%B2%E5%8F%A3%E6%97%B6%E5%BA%8F.jpg" alt="12864LCD串行时序" title="12864串口时序.jpg"></p>
-<p>(1)控制字节，控制数据传输方向和数据类型<br>(2)8位数据的高4位<br>(3)8位数据的低4位</p>
-<p><a href="http://bbs.elecfans.com/jishu_407275_1_1.html" target="_blank" rel="external">参考网站</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/DEV/12864LCD串口协议/" data-id="cipzmcx59000r08feydpd6itr" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/12864-串口/">12864,串口</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CONTIKI/CONTIKI应用之网络应用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/06/CONTIKI/CONTIKI应用之网络应用/" class="article-date">
-  <time datetime="2016-05-06T14:32:10.945Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/CONTIKI/CONTIKI应用之网络应用/">CONTIKI应用之网络功能应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>学校挑战杯项目是关于物联网的，需要用到CONTIKI系统的网络功能。在开发过程中遇到不少问题，所以把问题记录下来，以便以后总结。</p>
-<ol>
-<li>用contiki-wsn2530dk例程里的第9个“RPL-Collect”时“Sink”节点不调用collect_common_set_send_active()函数就不能接受节点的数据。<br>因为在Contiki2.7中send_active变量初始化为0，需要调用collect_common_set_send_active()给send_active变量赋值为1。而Contiki3.0中send_active变量初始化为1，并不需要再赋值。</li>
-<li><code>uip_ipaddr_copy(&amp;server_conn-&gt;ripaddr, &amp;clientipaddr);
-uip_udp_packet_send(server_conn, &quot;GET&quot;, sizeof(&quot;GET&quot;));
-uip_create_unspecified(&amp;server_conn-&gt;ripaddr);</code><br>主机给节点发送数据需要用到上面的函数，而用<br>`          uip_udp_packet_sendto(server_conn, buf, strlen(buf),<pre><code>&amp;clientipaddr, UIP_HTONS(UDP_CLIENT_PORT));`
-</code></pre>这个函数却不能把数据发送的节点，原因暂时不明。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之网络应用/" data-id="cipzmcx56000o08fec3kwy1m6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-网络/">CONTIKI,网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CONTIKI/CONTIKI应用之传感器驱动编写" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/06/CONTIKI/CONTIKI应用之传感器驱动编写/" class="article-date">
-  <time datetime="2016-05-06T14:32:10.926Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/CONTIKI/CONTIKI应用之传感器驱动编写/">CONTIKI应用之传感器驱动编写</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在用CONTIKI系统做开发时，免不了编写各种传感器的驱动。现把开发时遇到的问题和得出的经验记录下来，以便以后总结。</p>
-<p>CONTIKI系统的传感器驱动都封装在sensor这个结构体内</p>
-<pre><code>struct sensors_sensor {
-    char *       type; //传感器名称
-    int          (* value)     (int type); //指向读取传感器数据函数的指针
-    int          (* configure) (int type, int value); //指向传感器配置函数的指针
-    int          (* status)    (int type); //指向读取传感器状态函数的指针
-};
-</code></pre><p>在编写完传感器的驱动程序后，必须通过宏定义声明各个函数</p>
-<pre><code>SENSORS_SENSOR(button_1_sensor, BUTTON_SENSOR, value_b1, configure_b1, status_b1);
-</code></pre><p>并且在”smartrf-sensors.c”的结构体中</p>
-<pre><code>const struct sensors_sensor *sensors[] = {
-#if ADC_SENSOR_ON
-&amp;adc_sensor,
-#endif
-#if BUTTON_SENSOR_ON
-&amp;button_1_sensor,
-#if MODELS_CONF_CC2531_USB_STICK
-&amp;button_2_sensor,
-#endif
-#endif
-0
-};
-</code></pre><p>添加你所编写的驱动的名称。</p>
-<p>系统会在”sensors.c”中，搜索*sensors[]数组中的值</p>
-<pre><code>for(i = 0; sensors[i] != NULL; ++i) {
-    sensors_flags[i] = 0;
-    sensors[i]-&gt;configure(SENSORS_HW_INIT, 0);
-}
-</code></pre><p>用”sensors_changed”函数标记传感器事件的发生，并传递给用户程序。</p>
-<p>用”sensors_find”函数查找传感器驱动</p>
-<pre><code>sensor =(struct sensors_sensor *) sensors_find(ADC_SENSOR);
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之传感器驱动编写/" data-id="cipzmcx55000n08fe8u6yvl60" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-传感器驱动/">CONTIKI,传感器驱动</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CONTIKI/CONTIKI应用之串口应用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/06/CONTIKI/CONTIKI应用之串口应用/" class="article-date">
-  <time datetime="2016-05-06T14:32:10.923Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/CONTIKI/CONTIKI应用之串口应用/">CONTIKI应用之串口应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在CONTIKI开发时经常用到串口，所以把遇到的问题记录下来，以便以后总结。</p>
-<ol>
-<li>CC2530的串口驱动有一个BUG，会导致串口不能接收数据，现已修正。serial-line.c是串口的驱动程序，里面有一个“int”类型的“c”变量用来判断是否收到串口数据，而ringbuf_get()函数是用来轮询串口是否有数据输入的，返回一个“int”类型的数值。“c”变量与ringbuf_get()函数的返回值必须是同类型的，而在原来的程序中两者的类型并不相等，导致数据溢出，不能进入串口数据处理进程。</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/CONTIKI/images/CC2530%E5%B9%B3%E5%8F%B0%E4%B8%B2%E5%8F%A3BUG_1.jpg" alt="CC2530平台串口BUG_1" title="CC2530平台串口BUG_1.jpg"><br><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/CONTIKI/images/CC2530%E5%B9%B3%E5%8F%B0%E4%B8%B2%E5%8F%A3BUG_2.jpg" alt="CC2530平台串口BUG_2" title="CC2530平台串口BUG_2.jpg"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之串口应用/" data-id="cipzmcx53000l08feh1vv8cl8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-串口/">CONTIKI,串口</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -548,7 +543,7 @@ uip_create_unspecified(&amp;server_conn-&gt;ripaddr);</code><br>主机给节点�
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/12864-串口/">12864,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-I-O口/">CONTIKI,I/O口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-Ubuntu/">CONTIKI,Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-static和extern/">CONTIKI,static和extern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-串口/">CONTIKI,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-传感器驱动/">CONTIKI,传感器驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-网络/">CONTIKI,网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-驱动/">CONTIKI,驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT-for-Linux/">GIT for Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-IIC/">SSD1306,IIC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Source-Insight-中文/">Source Insight 中文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-分区/">Ubuntu,分区</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-命令/">Ubuntu,命令</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/12864-串口/">12864,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer-敷铜安全距离/">Altium Designer,敷铜安全距离</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-I-O口/">CONTIKI,I/O口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-Ubuntu/">CONTIKI,Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-static和extern/">CONTIKI,static和extern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-串口/">CONTIKI,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-传感器驱动/">CONTIKI,传感器驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-网络/">CONTIKI,网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-驱动/">CONTIKI,驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT-for-Linux/">GIT for Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB板/">PCB板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB板-经验总结/">PCB板 经验总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-IIC/">SSD1306,IIC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Source-Insight-中文/">Source Insight 中文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-分区/">Ubuntu,分区</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-命令/">Ubuntu,命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uCOSIII-信号量/">uCOSIII,信号量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uCOSIII-定时器/">uCOSIII,定时器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uCOSIII-应用/">uCOSIII,应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电量检测/">电量检测</a></li></ul>
     </div>
   </div>
 
@@ -558,7 +553,7 @@ uip_create_unspecified(&amp;server_conn-&gt;ripaddr);</code><br>主机给节点�
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/12864-串口/" style="font-size: 10px;">12864,串口</a> <a href="/tags/CONTIKI-I-O口/" style="font-size: 10px;">CONTIKI,I/O口</a> <a href="/tags/CONTIKI-Ubuntu/" style="font-size: 10px;">CONTIKI,Ubuntu</a> <a href="/tags/CONTIKI-static和extern/" style="font-size: 10px;">CONTIKI,static和extern</a> <a href="/tags/CONTIKI-串口/" style="font-size: 10px;">CONTIKI,串口</a> <a href="/tags/CONTIKI-传感器驱动/" style="font-size: 10px;">CONTIKI,传感器驱动</a> <a href="/tags/CONTIKI-网络/" style="font-size: 10px;">CONTIKI,网络</a> <a href="/tags/CONTIKI-驱动/" style="font-size: 10px;">CONTIKI,驱动</a> <a href="/tags/GIT-for-Linux/" style="font-size: 10px;">GIT for Linux</a> <a href="/tags/SSD1306-IIC/" style="font-size: 10px;">SSD1306,IIC</a> <a href="/tags/SSD1306-SPI/" style="font-size: 10px;">SSD1306,SPI</a> <a href="/tags/Source-Insight-中文/" style="font-size: 10px;">Source Insight 中文</a> <a href="/tags/Ubuntu-分区/" style="font-size: 10px;">Ubuntu,分区</a> <a href="/tags/Ubuntu-命令/" style="font-size: 10px;">Ubuntu,命令</a>
+      <a href="/tags/12864-串口/" style="font-size: 10px;">12864,串口</a> <a href="/tags/Altium-Designer-敷铜安全距离/" style="font-size: 10px;">Altium Designer,敷铜安全距离</a> <a href="/tags/CONTIKI-I-O口/" style="font-size: 10px;">CONTIKI,I/O口</a> <a href="/tags/CONTIKI-Ubuntu/" style="font-size: 10px;">CONTIKI,Ubuntu</a> <a href="/tags/CONTIKI-static和extern/" style="font-size: 10px;">CONTIKI,static和extern</a> <a href="/tags/CONTIKI-串口/" style="font-size: 10px;">CONTIKI,串口</a> <a href="/tags/CONTIKI-传感器驱动/" style="font-size: 10px;">CONTIKI,传感器驱动</a> <a href="/tags/CONTIKI-网络/" style="font-size: 10px;">CONTIKI,网络</a> <a href="/tags/CONTIKI-驱动/" style="font-size: 10px;">CONTIKI,驱动</a> <a href="/tags/GIT-for-Linux/" style="font-size: 10px;">GIT for Linux</a> <a href="/tags/PCB板/" style="font-size: 10px;">PCB板</a> <a href="/tags/PCB板-经验总结/" style="font-size: 10px;">PCB板 经验总结</a> <a href="/tags/SSD1306-IIC/" style="font-size: 10px;">SSD1306,IIC</a> <a href="/tags/SSD1306-SPI/" style="font-size: 10px;">SSD1306,SPI</a> <a href="/tags/Source-Insight-中文/" style="font-size: 10px;">Source Insight 中文</a> <a href="/tags/Ubuntu-分区/" style="font-size: 10px;">Ubuntu,分区</a> <a href="/tags/Ubuntu-命令/" style="font-size: 10px;">Ubuntu,命令</a> <a href="/tags/uCOSIII-信号量/" style="font-size: 10px;">uCOSIII,信号量</a> <a href="/tags/uCOSIII-定时器/" style="font-size: 10px;">uCOSIII,定时器</a> <a href="/tags/uCOSIII-应用/" style="font-size: 10px;">uCOSIII,应用</a> <a href="/tags/电量检测/" style="font-size: 10px;">电量检测</a>
     </div>
   </div>
 
@@ -567,7 +562,7 @@ uip_create_unspecified(&amp;server_conn-&gt;ripaddr);</code><br>主机给节点�
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
     </div>
   </div>
 
@@ -580,23 +575,23 @@ uip_create_unspecified(&amp;server_conn-&gt;ripaddr);</code><br>主机给节点�
       <ul>
         
           <li>
-            <a href="/2016/05/06/Ubuntu命令归纳/">Ubuntu命令归纳</a>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用之定时器应用/">uCOSIII应用之定时器应用</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/Ubuntu分区大小调整/">Ubuntu分区大小调整</a>
+            <a href="/2016/09/06/SmartSeat/电池电量检测/">电池电量检测</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/Source Insight显示中文/">Source Insight显示中文</a>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用/">uCOSIII应用</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/GIT for Linux安装/">GIT for Linux安装</a>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/">uCOSIII应用之信号量应用</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/DEV/SSD1306的SPI协议/">SSD1306的SPI协议</a>
+            <a href="/2016/09/06/SmartSeat/LM358应用/">(no title)</a>
           </li>
         
       </ul>

@@ -13,14 +13,14 @@ SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以�
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="近段时间调试小尺寸的OLED显示屏，虽然是SPI协议，接口上却写着SCL和SDA。所以要注意的是这种集成模块的OLED并不是使用IIC协议，而是SPI协议，而且并不用管CS，接低电平即可。
 SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以每次传输可以不用去管CS，但没CS这几个IO就被独占了。从图上可以看到数据是在SCLK上升沿时被传入，高位在前。DC用于表示写入的是数据">
-<meta property="og:image" content="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/OLED.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/SSD1306SPI%E5%9B%9B%E7%BA%BF.png">
-<meta property="og:updated_time" content="2016-05-06T14:48:52.673Z">
+<meta property="og:image" content="http://yoursite.com/images/DEV/OLED.jpg">
+<meta property="og:image" content="http://yoursite.com/images/DEV/SSD1306SPI%E5%9B%9B%E7%BA%BF.png">
+<meta property="og:updated_time" content="2016-10-19T15:41:29.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSD1306的SPI协议">
 <meta name="twitter:description" content="近段时间调试小尺寸的OLED显示屏，虽然是SPI协议，接口上却写着SCL和SDA。所以要注意的是这种集成模块的OLED并不是使用IIC协议，而是SPI协议，而且并不用管CS，接低电平即可。
 SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以每次传输可以不用去管CS，但没CS这几个IO就被独占了。从图上可以看到数据是在SCLK上升沿时被传入，高位在前。DC用于表示写入的是数据">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/OLED.jpg">
+<meta name="twitter:image" content="http://yoursite.com/images/DEV/OLED.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -93,14 +93,14 @@ SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>近段时间调试小尺寸的OLED显示屏，虽然是SPI协议，接口上却写着SCL和SDA。所以要注意的是这种集成模块的OLED并不是使用IIC协议，而是SPI协议，而且并不用管CS，接低电平即可。<br><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/OLED.jpg" alt="OLED外观" title="OLED.jpg"></p>
-<p>SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以每次传输可以不用去管CS，但没CS这几个IO就被独占了。从图上可以看到数据是在SCLK上升沿时被传入，高位在前。DC用于表示写入的是数据还是指令，DC为低时是指令写入，DC为高时是数据写入。<br>128*64的OLED在SSD1306的控制下，被分成8个页，每个页有8行128列，每个列对应一个字节。<br><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/SSD1306SPI%E5%9B%9B%E7%BA%BF.png" alt="SSD1306SPI四线" title="SSD1306SPI四线.png"></p>
+        <p>近段时间调试小尺寸的OLED显示屏，虽然是SPI协议，接口上却写着SCL和SDA。所以要注意的是这种集成模块的OLED并不是使用IIC协议，而是SPI协议，而且并不用管CS，接低电平即可。<br><img src="/images/DEV/OLED.jpg" alt="OLED外观" title="OLED.jpg"></p>
+<p>SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以每次传输可以不用去管CS，但没CS这几个IO就被独占了。从图上可以看到数据是在SCLK上升沿时被传入，高位在前。DC用于表示写入的是数据还是指令，DC为低时是指令写入，DC为高时是数据写入。<br>128*64的OLED在SSD1306的控制下，被分成8个页，每个页有8行128列，每个列对应一个字节。<br><img src="/images/DEV/SSD1306SPI%E5%9B%9B%E7%BA%BF.png" alt="SSD1306SPI四线" title="SSD1306SPI四线.png"></p>
 <p><a href="http://www.eeboard.com/bbs/forum.php?mod=viewthread&amp;tid=22116" target="_blank" rel="external">参考网站</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/DEV/SSD1306的SPI协议/" data-id="cipzmcx5d000u08fens6dc4la" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/06/DEV/SSD1306的SPI协议/" data-id="ciuh1c23u000uo8ferb8djuie" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li></ul>
@@ -142,7 +142,7 @@ SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以�
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/12864-串口/">12864,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-I-O口/">CONTIKI,I/O口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-Ubuntu/">CONTIKI,Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-static和extern/">CONTIKI,static和extern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-串口/">CONTIKI,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-传感器驱动/">CONTIKI,传感器驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-网络/">CONTIKI,网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-驱动/">CONTIKI,驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT-for-Linux/">GIT for Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-IIC/">SSD1306,IIC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Source-Insight-中文/">Source Insight 中文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-分区/">Ubuntu,分区</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-命令/">Ubuntu,命令</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/12864-串口/">12864,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer-敷铜安全距离/">Altium Designer,敷铜安全距离</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-I-O口/">CONTIKI,I/O口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-Ubuntu/">CONTIKI,Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-static和extern/">CONTIKI,static和extern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-串口/">CONTIKI,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-传感器驱动/">CONTIKI,传感器驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-网络/">CONTIKI,网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-驱动/">CONTIKI,驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT-for-Linux/">GIT for Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB板/">PCB板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB板-经验总结/">PCB板 经验总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-IIC/">SSD1306,IIC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Source-Insight-中文/">Source Insight 中文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-分区/">Ubuntu,分区</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-命令/">Ubuntu,命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uCOSIII-信号量/">uCOSIII,信号量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uCOSIII-定时器/">uCOSIII,定时器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uCOSIII-应用/">uCOSIII,应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电量检测/">电量检测</a></li></ul>
     </div>
   </div>
 
@@ -152,7 +152,7 @@ SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以�
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/12864-串口/" style="font-size: 10px;">12864,串口</a> <a href="/tags/CONTIKI-I-O口/" style="font-size: 10px;">CONTIKI,I/O口</a> <a href="/tags/CONTIKI-Ubuntu/" style="font-size: 10px;">CONTIKI,Ubuntu</a> <a href="/tags/CONTIKI-static和extern/" style="font-size: 10px;">CONTIKI,static和extern</a> <a href="/tags/CONTIKI-串口/" style="font-size: 10px;">CONTIKI,串口</a> <a href="/tags/CONTIKI-传感器驱动/" style="font-size: 10px;">CONTIKI,传感器驱动</a> <a href="/tags/CONTIKI-网络/" style="font-size: 10px;">CONTIKI,网络</a> <a href="/tags/CONTIKI-驱动/" style="font-size: 10px;">CONTIKI,驱动</a> <a href="/tags/GIT-for-Linux/" style="font-size: 10px;">GIT for Linux</a> <a href="/tags/SSD1306-IIC/" style="font-size: 10px;">SSD1306,IIC</a> <a href="/tags/SSD1306-SPI/" style="font-size: 10px;">SSD1306,SPI</a> <a href="/tags/Source-Insight-中文/" style="font-size: 10px;">Source Insight 中文</a> <a href="/tags/Ubuntu-分区/" style="font-size: 10px;">Ubuntu,分区</a> <a href="/tags/Ubuntu-命令/" style="font-size: 10px;">Ubuntu,命令</a>
+      <a href="/tags/12864-串口/" style="font-size: 10px;">12864,串口</a> <a href="/tags/Altium-Designer-敷铜安全距离/" style="font-size: 10px;">Altium Designer,敷铜安全距离</a> <a href="/tags/CONTIKI-I-O口/" style="font-size: 10px;">CONTIKI,I/O口</a> <a href="/tags/CONTIKI-Ubuntu/" style="font-size: 10px;">CONTIKI,Ubuntu</a> <a href="/tags/CONTIKI-static和extern/" style="font-size: 10px;">CONTIKI,static和extern</a> <a href="/tags/CONTIKI-串口/" style="font-size: 10px;">CONTIKI,串口</a> <a href="/tags/CONTIKI-传感器驱动/" style="font-size: 10px;">CONTIKI,传感器驱动</a> <a href="/tags/CONTIKI-网络/" style="font-size: 10px;">CONTIKI,网络</a> <a href="/tags/CONTIKI-驱动/" style="font-size: 10px;">CONTIKI,驱动</a> <a href="/tags/GIT-for-Linux/" style="font-size: 10px;">GIT for Linux</a> <a href="/tags/PCB板/" style="font-size: 10px;">PCB板</a> <a href="/tags/PCB板-经验总结/" style="font-size: 10px;">PCB板 经验总结</a> <a href="/tags/SSD1306-IIC/" style="font-size: 10px;">SSD1306,IIC</a> <a href="/tags/SSD1306-SPI/" style="font-size: 10px;">SSD1306,SPI</a> <a href="/tags/Source-Insight-中文/" style="font-size: 10px;">Source Insight 中文</a> <a href="/tags/Ubuntu-分区/" style="font-size: 10px;">Ubuntu,分区</a> <a href="/tags/Ubuntu-命令/" style="font-size: 10px;">Ubuntu,命令</a> <a href="/tags/uCOSIII-信号量/" style="font-size: 10px;">uCOSIII,信号量</a> <a href="/tags/uCOSIII-定时器/" style="font-size: 10px;">uCOSIII,定时器</a> <a href="/tags/uCOSIII-应用/" style="font-size: 10px;">uCOSIII,应用</a> <a href="/tags/电量检测/" style="font-size: 10px;">电量检测</a>
     </div>
   </div>
 
@@ -161,7 +161,7 @@ SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以�
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
     </div>
   </div>
 
@@ -174,23 +174,23 @@ SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以�
       <ul>
         
           <li>
-            <a href="/2016/05/06/Ubuntu命令归纳/">Ubuntu命令归纳</a>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用之定时器应用/">uCOSIII应用之定时器应用</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/Ubuntu分区大小调整/">Ubuntu分区大小调整</a>
+            <a href="/2016/09/06/SmartSeat/电池电量检测/">电池电量检测</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/Source Insight显示中文/">Source Insight显示中文</a>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用/">uCOSIII应用</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/GIT for Linux安装/">GIT for Linux安装</a>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/">uCOSIII应用之信号量应用</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/DEV/SSD1306的SPI协议/">SSD1306的SPI协议</a>
+            <a href="/2016/09/06/SmartSeat/LM358应用/">(no title)</a>
           </li>
         
       </ul>

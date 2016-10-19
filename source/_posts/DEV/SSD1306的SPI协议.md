@@ -15,6 +15,6 @@ SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以�
 [参考网站][3]
 
 
-  [1]: https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/OLED.jpg "OLED.jpg"
-  [2]: https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/SSD1306SPI%E5%9B%9B%E7%BA%BF.png "SSD1306SPI四线.png"
+  [1]: /images/DEV/OLED.jpg "OLED.jpg"
+  [2]: /images/DEV/SSD1306SPI%E5%9B%9B%E7%BA%BF.png "SSD1306SPI四线.png"
   [3]: http://www.eeboard.com/bbs/forum.php?mod=viewthread&tid=22116

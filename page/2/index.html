@@ -66,6 +66,389 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Source Insight显示中文" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/Source Insight显示中文/" class="article-date">
+  <time datetime="2016-05-06T14:32:11.322Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/06/Source Insight显示中文/">Source Insight显示中文</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>source insight 中文注释为乱码解决</p>
+<p>source insight 阅读VC++源码，注释为乱码解决方案</p>
+<ol>
+<li>options-&gt;preferences-&gt;Syntax Formatting-&gt;Styles；</li>
+<li>在Style Name 选择 Comment，再对其Font Name 选择Pick，然后再选择“新宋体”，编码选择GB2312。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/06/Source Insight显示中文/" data-id="ciuh1c21o0002o8feq8vrb991" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Source-Insight-中文/">Source Insight 中文</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-GIT for Linux安装" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/GIT for Linux安装/" class="article-date">
+  <time datetime="2016-05-06T14:32:11.320Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/06/GIT for Linux安装/">GIT for Linux安装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因为最近在做CONTIKI系统应用的开发，要用到GIT。在Ubuntu上安装GIT时遇到一个问题，编译的时候报错</p>
+<pre><code>Writing perl.mak for Git
+make[2]: *** [perl.mak] Error 1
+make[1]: *** [instlibdir] Error 2
+make: *** [git-add--interactive] Error 2
+</code></pre><p>一开始以为是缺少环境，几次检查后确定没有问题。最后发现是系统时间设置错误，系统的时间早于版本的时间，在时间正确设置后，问题解决。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/06/GIT for Linux安装/" data-id="ciuh1c2230007o8fecflgwyj0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GIT-for-Linux/">GIT for Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-DEV/SSD1306的SPI协议" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/DEV/SSD1306的SPI协议/" class="article-date">
+  <time datetime="2016-05-06T14:32:11.112Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/06/DEV/SSD1306的SPI协议/">SSD1306的SPI协议</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>近段时间调试小尺寸的OLED显示屏，虽然是SPI协议，接口上却写着SCL和SDA。所以要注意的是这种集成模块的OLED并不是使用IIC协议，而是SPI协议，而且并不用管CS，接低电平即可。<br><img src="/images/DEV/OLED.jpg" alt="OLED外观" title="OLED.jpg"></p>
+<p>SSD1306的SPI协议时序图，因为这个OLED默认就把CS拉低了，所以每次传输可以不用去管CS，但没CS这几个IO就被独占了。从图上可以看到数据是在SCLK上升沿时被传入，高位在前。DC用于表示写入的是数据还是指令，DC为低时是指令写入，DC为高时是数据写入。<br>128*64的OLED在SSD1306的控制下，被分成8个页，每个页有8行128列，每个列对应一个字节。<br><img src="/images/DEV/SSD1306SPI%E5%9B%9B%E7%BA%BF.png" alt="SSD1306SPI四线" title="SSD1306SPI四线.png"></p>
+<p><a href="http://www.eeboard.com/bbs/forum.php?mod=viewthread&amp;tid=22116" target="_blank" rel="external">参考网站</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/06/DEV/SSD1306的SPI协议/" data-id="ciuh1c23u000uo8ferb8djuie" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-DEV/IIC协议(OLED_SSD1306)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/DEV/IIC协议(OLED_SSD1306)/" class="article-date">
+  <time datetime="2016-05-06T14:32:11.095Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/06/DEV/IIC协议(OLED_SSD1306)/">OLED(SSD1306驱动芯片)的IIC协议</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>下面是OLED(SSD1306驱动芯片)IIC协议的摘要中文翻译<br><img src="/images/DEV/从设备地址.jpg" alt=""></p>
+<ol>
+<li>SCL和SDA都要接上拉电阻</li>
+<li>数据传输中SDA只能在SCL为低时转变，在SCL为高时必须保持不变</li>
+<li>RES接口用于设备初始化</li>
+<li><p>DC接口作为从设备选择位，当R/W为1时是读取模式，R/W为0时是写入模式。 </p>
+</li>
+<li><p>ACK信号在一个SCL的高电平时输出，0为成功，1为失败</p>
+</li>
+<li>IIC写入的顺序<br>(1)开始信号<br>(2)从设备地址<br>(3)写入控制字节和数据字节。控制字节为CO+D/C+6个0。<br>如果CO为0，表示没有连续写入。<br>如果D/C为0，表示写入命令；D/C为1，表示写入数据，数据将储存在GDDRAM中，GDDRAM中的数据指针会自动加1<br>(4)每一次写入都会有ACK<br><img src="/images/DEV/IIC写入.jpg" alt="IIC写入过程"><br>(5)IIC开始信号为SDA由高到底，结束信号为由低到高，SCL都要为高<br><img src="/images/DEV/IIC%E9%80%9A%E8%AE%AF%E5%BC%80%E5%A7%8B.jpg" alt="IIC开始与结束" title="IIC通讯开始.jpg"></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/06/DEV/IIC协议(OLED_SSD1306)/" data-id="ciuh1c23u000wo8fed1uimyao" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSD1306-IIC/">SSD1306,IIC</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-DEV/12864LCD串口协议" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/DEV/12864LCD串口协议/" class="article-date">
+  <time datetime="2016-05-06T14:32:11.075Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/06/DEV/12864LCD串口协议/">12864LCD显示屏的串口协议</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>12864LCD显示屏可以选择使用串口还是并口模式</p>
+<p><img src="/images/DEV/12864%E7%AB%AF%E5%8F%A3%E5%AE%9A%E4%B9%89.jpg" alt="12864端口定义" title="12864端口定义.jpg"></p>
+<p>如上图所示,PSB接地时12864采用串口模式。</p>
+<p>所以当使用串口模式时，硬件的连接为：<br>GND,PSB,LED_K接地；VCC,VO,RS(CS),/RST,LED_A接+5V；<br>R/W(SID)接SPI数据口；E(CLK)接SPI时钟口。</p>
+<p>12864LCD显示屏的数据分三个字节传输</p>
+<p><img src="/images/DEV/12864%E4%B8%B2%E5%8F%A3%E6%97%B6%E5%BA%8F.jpg" alt="12864LCD串行时序" title="12864串口时序.jpg"></p>
+<p>(1)控制字节，控制数据传输方向和数据类型<br>(2)8位数据的高4位<br>(3)8位数据的低4位</p>
+<p><a href="http://bbs.elecfans.com/jishu_407275_1_1.html" target="_blank" rel="external">参考网站</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/06/DEV/12864LCD串口协议/" data-id="ciuh1c23e000ro8fel4mjv4d5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/12864-串口/">12864,串口</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CONTIKI/CONTIKI应用之网络应用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/CONTIKI/CONTIKI应用之网络应用/" class="article-date">
+  <time datetime="2016-05-06T14:32:10.945Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/06/CONTIKI/CONTIKI应用之网络应用/">CONTIKI应用之网络功能应用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>学校挑战杯项目是关于物联网的，需要用到CONTIKI系统的网络功能。在开发过程中遇到不少问题，所以把问题记录下来，以便以后总结。</p>
+<ol>
+<li>用contiki-wsn2530dk例程里的第9个“RPL-Collect”时“Sink”节点不调用collect_common_set_send_active()函数就不能接受节点的数据。<br>因为在Contiki2.7中send_active变量初始化为0，需要调用collect_common_set_send_active()给send_active变量赋值为1。而Contiki3.0中send_active变量初始化为1，并不需要再赋值。</li>
+<li><code>uip_ipaddr_copy(&amp;server_conn-&gt;ripaddr, &amp;clientipaddr);
+uip_udp_packet_send(server_conn, &quot;GET&quot;, sizeof(&quot;GET&quot;));
+uip_create_unspecified(&amp;server_conn-&gt;ripaddr);</code><br>主机给节点发送数据需要用到上面的函数，而用<br>`          uip_udp_packet_sendto(server_conn, buf, strlen(buf),<pre><code>&amp;clientipaddr, UIP_HTONS(UDP_CLIENT_PORT));`
+</code></pre>这个函数却不能把数据发送的节点，原因暂时不明。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之网络应用/" data-id="ciuh1c23u000to8feefwy7xc8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-网络/">CONTIKI,网络</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CONTIKI/CONTIKI应用之传感器驱动编写" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/CONTIKI/CONTIKI应用之传感器驱动编写/" class="article-date">
+  <time datetime="2016-05-06T14:32:10.926Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/06/CONTIKI/CONTIKI应用之传感器驱动编写/">CONTIKI应用之传感器驱动编写</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在用CONTIKI系统做开发时，免不了编写各种传感器的驱动。现把开发时遇到的问题和得出的经验记录下来，以便以后总结。</p>
+<p>CONTIKI系统的传感器驱动都封装在sensor这个结构体内</p>
+<pre><code>struct sensors_sensor {
+    char *       type; //传感器名称
+    int          (* value)     (int type); //指向读取传感器数据函数的指针
+    int          (* configure) (int type, int value); //指向传感器配置函数的指针
+    int          (* status)    (int type); //指向读取传感器状态函数的指针
+};
+</code></pre><p>在编写完传感器的驱动程序后，必须通过宏定义声明各个函数</p>
+<pre><code>SENSORS_SENSOR(button_1_sensor, BUTTON_SENSOR, value_b1, configure_b1, status_b1);
+</code></pre><p>并且在”smartrf-sensors.c”的结构体中</p>
+<pre><code>const struct sensors_sensor *sensors[] = {
+#if ADC_SENSOR_ON
+&amp;adc_sensor,
+#endif
+#if BUTTON_SENSOR_ON
+&amp;button_1_sensor,
+#if MODELS_CONF_CC2531_USB_STICK
+&amp;button_2_sensor,
+#endif
+#endif
+0
+};
+</code></pre><p>添加你所编写的驱动的名称。</p>
+<p>系统会在”sensors.c”中，搜索*sensors[]数组中的值</p>
+<pre><code>for(i = 0; sensors[i] != NULL; ++i) {
+    sensors_flags[i] = 0;
+    sensors[i]-&gt;configure(SENSORS_HW_INIT, 0);
+}
+</code></pre><p>用”sensors_changed”函数标记传感器事件的发生，并传递给用户程序。</p>
+<p>用”sensors_find”函数查找传感器驱动</p>
+<pre><code>sensor =(struct sensors_sensor *) sensors_find(ADC_SENSOR);
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之传感器驱动编写/" data-id="ciuh1c23u000yo8fecdonhiit" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-传感器驱动/">CONTIKI,传感器驱动</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CONTIKI/CONTIKI应用之串口应用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/CONTIKI/CONTIKI应用之串口应用/" class="article-date">
+  <time datetime="2016-05-06T14:32:10.923Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/06/CONTIKI/CONTIKI应用之串口应用/">CONTIKI应用之串口应用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在CONTIKI开发时经常用到串口，所以把遇到的问题记录下来，以便以后总结。</p>
+<ol>
+<li>CC2530的串口驱动有一个BUG，会导致串口不能接收数据，现已修正。serial-line.c是串口的驱动程序，里面有一个“int”类型的“c”变量用来判断是否收到串口数据，而ringbuf_get()函数是用来轮询串口是否有数据输入的，返回一个“int”类型的数值。“c”变量与ringbuf_get()函数的返回值必须是同类型的，而在原来的程序中两者的类型并不相等，导致数据溢出，不能进入串口数据处理进程。</li>
+</ol>
+<p><img src="/images/CONTIKI/CC2530平台串口BUG_1.jpg" alt="CC2530平台串口BUG_1"><br><img src="/images/CONTIKI/CC2530平台串口BUG_2.jpg" alt="CC2530平台串口BUG_2"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之串口应用/" data-id="ciuh1c22z000ho8fei8czbylp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-串口/">CONTIKI,串口</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CONTIKI/CONTIKI应用之Ubuntu环境下开发" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/06/CONTIKI/CONTIKI应用之Ubuntu环境下开发/" class="article-date">
@@ -98,7 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之Ubuntu环境下开发/" data-id="cipzmcx4u000g08fe0ma6wzbf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之Ubuntu环境下开发/" data-id="ciuh1c22z000fo8feuo0izz5q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-Ubuntu/">CONTIKI,Ubuntu</a></li></ul>
@@ -138,7 +521,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之static和extern/" data-id="cipzmcx51000j08felxufd46l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之static和extern/" data-id="ciuh1c23e000qo8fek1wiacdn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-static和extern/">CONTIKI,static和extern</a></li></ul>
@@ -150,143 +533,10 @@
 
 
   
-    <article id="post-CONTIKI/CONTIKI应用之IO口应用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/06/CONTIKI/CONTIKI应用之IO口应用/" class="article-date">
-  <time datetime="2016-05-06T14:32:10.914Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/CONTIKI/CONTIKI应用之IO口应用/">CONTIKI应用之IO口应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。</p>
-<p>CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中</p>
-<pre><code>#define PORT_CLEAR(port,pin)         PORT_CLEAR_X(port,pin) PORT_CLEAR_X(port,pin)
-#define PORT_TOGGLE(port,pin)        PORT_TOGGLE_X(port,pin) PORT_TOGGLE_X(port,pin)
-</code></pre><p>PORT_CLEAR和PORT_TOGGLE的宏定义错误。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之IO口应用/" data-id="cipzmcx4y000i08fe7lx6ufv5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-I-O口/">CONTIKI,I/O口</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/06/CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发/" class="article-date">
-  <time datetime="2016-05-06T14:32:10.894Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发/">CONTIKI应用之温湿度传感器DHT11驱动开发</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>参加学校的挑战杯比赛，我们小组的项目是基于CONTIKI系统的，使用CC2530平台，所以需要为传感器开发底层驱动。</p>
-<p>DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输出公用一个端口，对时序的要求比较高。</p>
-<p>在开发过程中我遇到了一下几个问题:</p>
-<ol>
-<li>关闭CONTIKI的看门狗才能在程序中调用单片机的IO口。原因可能是打开看门狗后不能用IAR的单步调试。（暂解决）</li>
-<li>用示波器捕捉波形发现，主机发送开始信号后，DHT11没有进入采集模式，无数据输出。原因是驱动时序出错，当DHT11输出“1”时，没有先等DHT11拉低就进入了下一位的读取，导致整个时序出错。（已解决）<br><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/CONTIKI/images/DHT11%E8%BE%93%E5%87%BA%E2%80%9C1%E2%80%9D.jpg" alt="DHT11输出1"></li>
-</ol>
-<h3 id="在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I-O口设置，这方面出错的可能性很大。"><a href="#在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I-O口设置，这方面出错的可能性很大。" class="headerlink" title="在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I/O口设置，这方面出错的可能性很大。"></a><strong>在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I/O口设置，这方面出错的可能性很大。</strong></h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发/" data-id="cipzmcx4l000f08fewdxchqkt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-驱动/">CONTIKI,驱动</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/06/hello-world/" class="article-date">
-  <time datetime="2016-05-06T13:48:31.237Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/hello-world/" data-id="cipzmcx3u000808fegco1j9zu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -299,7 +549,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/12864-串口/">12864,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-I-O口/">CONTIKI,I/O口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-Ubuntu/">CONTIKI,Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-static和extern/">CONTIKI,static和extern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-串口/">CONTIKI,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-传感器驱动/">CONTIKI,传感器驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-网络/">CONTIKI,网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-驱动/">CONTIKI,驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT-for-Linux/">GIT for Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-IIC/">SSD1306,IIC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Source-Insight-中文/">Source Insight 中文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-分区/">Ubuntu,分区</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-命令/">Ubuntu,命令</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/12864-串口/">12864,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer-敷铜安全距离/">Altium Designer,敷铜安全距离</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-I-O口/">CONTIKI,I/O口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-Ubuntu/">CONTIKI,Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-static和extern/">CONTIKI,static和extern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-串口/">CONTIKI,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-传感器驱动/">CONTIKI,传感器驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-网络/">CONTIKI,网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-驱动/">CONTIKI,驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT-for-Linux/">GIT for Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB板/">PCB板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB板-经验总结/">PCB板 经验总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-IIC/">SSD1306,IIC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Source-Insight-中文/">Source Insight 中文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-分区/">Ubuntu,分区</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-命令/">Ubuntu,命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uCOSIII-信号量/">uCOSIII,信号量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uCOSIII-定时器/">uCOSIII,定时器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uCOSIII-应用/">uCOSIII,应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电量检测/">电量检测</a></li></ul>
     </div>
   </div>
 
@@ -309,7 +559,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/12864-串口/" style="font-size: 10px;">12864,串口</a> <a href="/tags/CONTIKI-I-O口/" style="font-size: 10px;">CONTIKI,I/O口</a> <a href="/tags/CONTIKI-Ubuntu/" style="font-size: 10px;">CONTIKI,Ubuntu</a> <a href="/tags/CONTIKI-static和extern/" style="font-size: 10px;">CONTIKI,static和extern</a> <a href="/tags/CONTIKI-串口/" style="font-size: 10px;">CONTIKI,串口</a> <a href="/tags/CONTIKI-传感器驱动/" style="font-size: 10px;">CONTIKI,传感器驱动</a> <a href="/tags/CONTIKI-网络/" style="font-size: 10px;">CONTIKI,网络</a> <a href="/tags/CONTIKI-驱动/" style="font-size: 10px;">CONTIKI,驱动</a> <a href="/tags/GIT-for-Linux/" style="font-size: 10px;">GIT for Linux</a> <a href="/tags/SSD1306-IIC/" style="font-size: 10px;">SSD1306,IIC</a> <a href="/tags/SSD1306-SPI/" style="font-size: 10px;">SSD1306,SPI</a> <a href="/tags/Source-Insight-中文/" style="font-size: 10px;">Source Insight 中文</a> <a href="/tags/Ubuntu-分区/" style="font-size: 10px;">Ubuntu,分区</a> <a href="/tags/Ubuntu-命令/" style="font-size: 10px;">Ubuntu,命令</a>
+      <a href="/tags/12864-串口/" style="font-size: 10px;">12864,串口</a> <a href="/tags/Altium-Designer-敷铜安全距离/" style="font-size: 10px;">Altium Designer,敷铜安全距离</a> <a href="/tags/CONTIKI-I-O口/" style="font-size: 10px;">CONTIKI,I/O口</a> <a href="/tags/CONTIKI-Ubuntu/" style="font-size: 10px;">CONTIKI,Ubuntu</a> <a href="/tags/CONTIKI-static和extern/" style="font-size: 10px;">CONTIKI,static和extern</a> <a href="/tags/CONTIKI-串口/" style="font-size: 10px;">CONTIKI,串口</a> <a href="/tags/CONTIKI-传感器驱动/" style="font-size: 10px;">CONTIKI,传感器驱动</a> <a href="/tags/CONTIKI-网络/" style="font-size: 10px;">CONTIKI,网络</a> <a href="/tags/CONTIKI-驱动/" style="font-size: 10px;">CONTIKI,驱动</a> <a href="/tags/GIT-for-Linux/" style="font-size: 10px;">GIT for Linux</a> <a href="/tags/PCB板/" style="font-size: 10px;">PCB板</a> <a href="/tags/PCB板-经验总结/" style="font-size: 10px;">PCB板 经验总结</a> <a href="/tags/SSD1306-IIC/" style="font-size: 10px;">SSD1306,IIC</a> <a href="/tags/SSD1306-SPI/" style="font-size: 10px;">SSD1306,SPI</a> <a href="/tags/Source-Insight-中文/" style="font-size: 10px;">Source Insight 中文</a> <a href="/tags/Ubuntu-分区/" style="font-size: 10px;">Ubuntu,分区</a> <a href="/tags/Ubuntu-命令/" style="font-size: 10px;">Ubuntu,命令</a> <a href="/tags/uCOSIII-信号量/" style="font-size: 10px;">uCOSIII,信号量</a> <a href="/tags/uCOSIII-定时器/" style="font-size: 10px;">uCOSIII,定时器</a> <a href="/tags/uCOSIII-应用/" style="font-size: 10px;">uCOSIII,应用</a> <a href="/tags/电量检测/" style="font-size: 10px;">电量检测</a>
     </div>
   </div>
 
@@ -318,7 +568,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
     </div>
   </div>
 
@@ -331,23 +581,23 @@
       <ul>
         
           <li>
-            <a href="/2016/05/06/Ubuntu命令归纳/">Ubuntu命令归纳</a>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用之定时器应用/">uCOSIII应用之定时器应用</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/Ubuntu分区大小调整/">Ubuntu分区大小调整</a>
+            <a href="/2016/09/06/SmartSeat/电池电量检测/">电池电量检测</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/Source Insight显示中文/">Source Insight显示中文</a>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用/">uCOSIII应用</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/GIT for Linux安装/">GIT for Linux安装</a>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/">uCOSIII应用之信号量应用</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/DEV/SSD1306的SPI协议/">SSD1306的SPI协议</a>
+            <a href="/2016/09/06/SmartSeat/LM358应用/">(no title)</a>
           </li>
         
       </ul>

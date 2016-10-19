@@ -21,8 +21,8 @@ DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输
 
 关闭CONTIKI的看门狗才能在程序中调用单片机的IO口。原因可能是打开看门狗后不能用IAR的单步调试。（暂解决）
 用示波器捕捉波形发现，主机发送">
-<meta property="og:image" content="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/CONTIKI/images/DHT11%E8%BE%93%E5%87%BA%E2%80%9C1%E2%80%9D.jpg">
-<meta property="og:updated_time" content="2016-05-06T14:44:04.762Z">
+<meta property="og:image" content="http://yoursite.com/images/CONTIKI/DHT11.jpg">
+<meta property="og:updated_time" content="2016-10-19T15:33:58.705Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CONTIKI应用之温湿度传感器DHT11驱动开发">
 <meta name="twitter:description" content="参加学校的挑战杯比赛，我们小组的项目是基于CONTIKI系统的，使用CC2530平台，所以需要为传感器开发底层驱动。
@@ -31,7 +31,7 @@ DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输
 
 关闭CONTIKI的看门狗才能在程序中调用单片机的IO口。原因可能是打开看门狗后不能用IAR的单步调试。（暂解决）
 用示波器捕捉波形发现，主机发送">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/CONTIKI/images/DHT11%E8%BE%93%E5%87%BA%E2%80%9C1%E2%80%9D.jpg">
+<meta name="twitter:image" content="http://yoursite.com/images/CONTIKI/DHT11.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -109,13 +109,13 @@ DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输
 <p>在开发过程中我遇到了一下几个问题:</p>
 <ol>
 <li>关闭CONTIKI的看门狗才能在程序中调用单片机的IO口。原因可能是打开看门狗后不能用IAR的单步调试。（暂解决）</li>
-<li>用示波器捕捉波形发现，主机发送开始信号后，DHT11没有进入采集模式，无数据输出。原因是驱动时序出错，当DHT11输出“1”时，没有先等DHT11拉低就进入了下一位的读取，导致整个时序出错。（已解决）<br><img src="https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/CONTIKI/images/DHT11%E8%BE%93%E5%87%BA%E2%80%9C1%E2%80%9D.jpg" alt="DHT11输出1"></li>
+<li>用示波器捕捉波形发现，主机发送开始信号后，DHT11没有进入采集模式，无数据输出。原因是驱动时序出错，当DHT11输出“1”时，没有先等DHT11拉低就进入了下一位的读取，导致整个时序出错。（已解决）<br><img src="/images/CONTIKI/DHT11.jpg" alt="DHT11"></li>
 </ol>
 <h3 id="在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I-O口设置，这方面出错的可能性很大。"><a href="#在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I-O口设置，这方面出错的可能性很大。" class="headerlink" title="在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I/O口设置，这方面出错的可能性很大。"></a><strong>在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I/O口设置，这方面出错的可能性很大。</strong></h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发/" data-id="cipzmcx4l000f08fewdxchqkt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发/" data-id="ciuh1c22z000eo8fekifrd4e1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-驱动/">CONTIKI,驱动</a></li></ul>
@@ -157,7 +157,7 @@ DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/12864-串口/">12864,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-I-O口/">CONTIKI,I/O口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-Ubuntu/">CONTIKI,Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-static和extern/">CONTIKI,static和extern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-串口/">CONTIKI,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-传感器驱动/">CONTIKI,传感器驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-网络/">CONTIKI,网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-驱动/">CONTIKI,驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT-for-Linux/">GIT for Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-IIC/">SSD1306,IIC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Source-Insight-中文/">Source Insight 中文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-分区/">Ubuntu,分区</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-命令/">Ubuntu,命令</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/12864-串口/">12864,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer-敷铜安全距离/">Altium Designer,敷铜安全距离</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-I-O口/">CONTIKI,I/O口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-Ubuntu/">CONTIKI,Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-static和extern/">CONTIKI,static和extern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-串口/">CONTIKI,串口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-传感器驱动/">CONTIKI,传感器驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-网络/">CONTIKI,网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CONTIKI-驱动/">CONTIKI,驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT-for-Linux/">GIT for Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB板/">PCB板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCB板-经验总结/">PCB板 经验总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-IIC/">SSD1306,IIC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSD1306-SPI/">SSD1306,SPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Source-Insight-中文/">Source Insight 中文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-分区/">Ubuntu,分区</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-命令/">Ubuntu,命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uCOSIII-信号量/">uCOSIII,信号量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uCOSIII-定时器/">uCOSIII,定时器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uCOSIII-应用/">uCOSIII,应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电量检测/">电量检测</a></li></ul>
     </div>
   </div>
 
@@ -167,7 +167,7 @@ DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/12864-串口/" style="font-size: 10px;">12864,串口</a> <a href="/tags/CONTIKI-I-O口/" style="font-size: 10px;">CONTIKI,I/O口</a> <a href="/tags/CONTIKI-Ubuntu/" style="font-size: 10px;">CONTIKI,Ubuntu</a> <a href="/tags/CONTIKI-static和extern/" style="font-size: 10px;">CONTIKI,static和extern</a> <a href="/tags/CONTIKI-串口/" style="font-size: 10px;">CONTIKI,串口</a> <a href="/tags/CONTIKI-传感器驱动/" style="font-size: 10px;">CONTIKI,传感器驱动</a> <a href="/tags/CONTIKI-网络/" style="font-size: 10px;">CONTIKI,网络</a> <a href="/tags/CONTIKI-驱动/" style="font-size: 10px;">CONTIKI,驱动</a> <a href="/tags/GIT-for-Linux/" style="font-size: 10px;">GIT for Linux</a> <a href="/tags/SSD1306-IIC/" style="font-size: 10px;">SSD1306,IIC</a> <a href="/tags/SSD1306-SPI/" style="font-size: 10px;">SSD1306,SPI</a> <a href="/tags/Source-Insight-中文/" style="font-size: 10px;">Source Insight 中文</a> <a href="/tags/Ubuntu-分区/" style="font-size: 10px;">Ubuntu,分区</a> <a href="/tags/Ubuntu-命令/" style="font-size: 10px;">Ubuntu,命令</a>
+      <a href="/tags/12864-串口/" style="font-size: 10px;">12864,串口</a> <a href="/tags/Altium-Designer-敷铜安全距离/" style="font-size: 10px;">Altium Designer,敷铜安全距离</a> <a href="/tags/CONTIKI-I-O口/" style="font-size: 10px;">CONTIKI,I/O口</a> <a href="/tags/CONTIKI-Ubuntu/" style="font-size: 10px;">CONTIKI,Ubuntu</a> <a href="/tags/CONTIKI-static和extern/" style="font-size: 10px;">CONTIKI,static和extern</a> <a href="/tags/CONTIKI-串口/" style="font-size: 10px;">CONTIKI,串口</a> <a href="/tags/CONTIKI-传感器驱动/" style="font-size: 10px;">CONTIKI,传感器驱动</a> <a href="/tags/CONTIKI-网络/" style="font-size: 10px;">CONTIKI,网络</a> <a href="/tags/CONTIKI-驱动/" style="font-size: 10px;">CONTIKI,驱动</a> <a href="/tags/GIT-for-Linux/" style="font-size: 10px;">GIT for Linux</a> <a href="/tags/PCB板/" style="font-size: 10px;">PCB板</a> <a href="/tags/PCB板-经验总结/" style="font-size: 10px;">PCB板 经验总结</a> <a href="/tags/SSD1306-IIC/" style="font-size: 10px;">SSD1306,IIC</a> <a href="/tags/SSD1306-SPI/" style="font-size: 10px;">SSD1306,SPI</a> <a href="/tags/Source-Insight-中文/" style="font-size: 10px;">Source Insight 中文</a> <a href="/tags/Ubuntu-分区/" style="font-size: 10px;">Ubuntu,分区</a> <a href="/tags/Ubuntu-命令/" style="font-size: 10px;">Ubuntu,命令</a> <a href="/tags/uCOSIII-信号量/" style="font-size: 10px;">uCOSIII,信号量</a> <a href="/tags/uCOSIII-定时器/" style="font-size: 10px;">uCOSIII,定时器</a> <a href="/tags/uCOSIII-应用/" style="font-size: 10px;">uCOSIII,应用</a> <a href="/tags/电量检测/" style="font-size: 10px;">电量检测</a>
     </div>
   </div>
 
@@ -176,7 +176,7 @@ DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
     </div>
   </div>
 
@@ -189,23 +189,23 @@ DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输
       <ul>
         
           <li>
-            <a href="/2016/05/06/Ubuntu命令归纳/">Ubuntu命令归纳</a>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用之定时器应用/">uCOSIII应用之定时器应用</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/Ubuntu分区大小调整/">Ubuntu分区大小调整</a>
+            <a href="/2016/09/06/SmartSeat/电池电量检测/">电池电量检测</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/Source Insight显示中文/">Source Insight显示中文</a>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用/">uCOSIII应用</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/GIT for Linux安装/">GIT for Linux安装</a>
+            <a href="/2016/09/06/SmartSeat/uCOSIII应用之信号量应用/">uCOSIII应用之信号量应用</a>
           </li>
         
           <li>
-            <a href="/2016/05/06/DEV/SSD1306的SPI协议/">SSD1306的SPI协议</a>
+            <a href="/2016/09/06/SmartSeat/LM358应用/">(no title)</a>
           </li>
         
       </ul>

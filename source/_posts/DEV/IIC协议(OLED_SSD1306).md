@@ -6,12 +6,12 @@ grammar_cjkRuby: true
 
 
 下面是OLED(SSD1306驱动芯片)IIC协议的摘要中文翻译
-
+![](/images/DEV/从设备地址.jpg)
  1. SCL和SDA都要接上拉电阻
  2. 数据传输中SDA只能在SCL为低时转变，在SCL为高时必须保持不变
  2. RES接口用于设备初始化
  3. DC接口作为从设备选择位，当R/W为1时是读取模式，R/W为0时是写入模式。 
-        ![从设备地址](https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/%E4%BB%8E%E8%AE%BE%E5%A4%87%E5%9C%B0%E5%9D%80.jpg)
+ 
  4. ACK信号在一个SCL的高电平时输出，0为成功，1为失败
  5. IIC写入的顺序
 (1)开始信号
@@ -25,5 +25,6 @@ grammar_cjkRuby: true
 ![IIC开始与结束][3]
 
 
-  [2]: https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/IIC写入.jpg
-  [3]: https://raw.githubusercontent.com/ChenZJgor/Studylogs/master/DEV/images/IIC%E9%80%9A%E8%AE%AF%E5%BC%80%E5%A7%8B.jpg "IIC通讯开始.jpg"
+  [1]: /images/DEV/从设备地址.jpg
+  [2]: /images/DEV/IIC写入.jpg
+  [3]: /images/DEV/IIC%E9%80%9A%E8%AE%AF%E5%BC%80%E5%A7%8B.jpg "IIC通讯开始.jpg"
