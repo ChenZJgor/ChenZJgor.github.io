@@ -2,8 +2,7 @@
 menu:
   主页: /
   归档: /archives
-  目录: /index
-  Index: /Indexs
+  目录: /Indexs
 rss: /atom.xml
 
 # Content
