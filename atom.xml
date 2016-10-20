@@ -178,22 +178,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://yoursite.com/2016/09/06/SmartSeat/LM358%E5%BA%94%E7%94%A8/"/>
-    <id>http://yoursite.com/2016/09/06/SmartSeat/LM358应用/</id>
-    <published>2016-09-06T15:17:32.814Z</published>
-    <updated>2016-08-28T12:11:41.085Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>画板总结（电子设计竞赛画板总结）</title>
     <link href="http://yoursite.com/2016/09/06/Altium%20Designer/%E7%94%BB%E6%9D%BF%E6%80%BB%E7%BB%93(%E4%BA%8C)/"/>
     <id>http://yoursite.com/2016/09/06/Altium Designer/画板总结(二)/</id>
@@ -635,6 +619,33 @@ uip_create_unspecified(&amp;amp;server_conn-&amp;gt;ripaddr);&lt;/code&gt;&lt;br
     
     
       <category term="CONTIKI,static和extern" scheme="http://yoursite.com/tags/CONTIKI-static%E5%92%8Cextern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CONTIKI应用之IO口应用</title>
+    <link href="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BIO%E5%8F%A3%E5%BA%94%E7%94%A8/"/>
+    <id>http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之IO口应用/</id>
+    <published>2016-05-06T14:32:10.914Z</published>
+    <updated>2016-05-06T09:31:51.639Z</updated>
+    
+    <content type="html">&lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
+&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port,pin)         PORT_CLEAR_X(port,pin) PORT_CLEAR_X(port,pin)
+#define PORT_TOGGLE(port,pin)        PORT_TOGGLE_X(port,pin) PORT_TOGGLE_X(port,pin)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;PORT_CLEAR和PORT_TOGGLE的宏定义错误。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
+&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port
+    
+    </summary>
+    
+    
+      <category term="CONTIKI,I/O口" scheme="http://yoursite.com/tags/CONTIKI-I-O%E5%8F%A3/"/>
     
   </entry>
   

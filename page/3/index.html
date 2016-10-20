@@ -66,49 +66,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-CONTIKI/CONTIKI应用之IO口应用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/06/CONTIKI/CONTIKI应用之IO口应用/" class="article-date">
-  <time datetime="2016-05-06T14:32:10.914Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/CONTIKI/CONTIKI应用之IO口应用/">CONTIKI应用之IO口应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。</p>
-<p>CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中</p>
-<pre><code>#define PORT_CLEAR(port,pin)         PORT_CLEAR_X(port,pin) PORT_CLEAR_X(port,pin)
-#define PORT_TOGGLE(port,pin)        PORT_TOGGLE_X(port,pin) PORT_TOGGLE_X(port,pin)
-</code></pre><p>PORT_CLEAR和PORT_TOGGLE的宏定义错误。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之IO口应用/" data-id="ciuh4g3fl000lk0feett9a06c" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-I-O口/">CONTIKI,I/O口</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/06/CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发/" class="article-date">
@@ -263,7 +220,7 @@
           </li>
         
           <li>
-            <a href="/2016/09/06/SmartSeat/LM358应用/">(no title)</a>
+            <a href="/2016/09/06/Altium Designer/画板总结(二)/">画板总结（电子设计竞赛画板总结）</a>
           </li>
         
       </ul>

@@ -66,50 +66,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Source Insight显示中文" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/06/Source Insight显示中文/" class="article-date">
-  <time datetime="2016-05-06T14:32:11.322Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/Source Insight显示中文/">Source Insight显示中文</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>source insight 中文注释为乱码解决</p>
-<p>source insight 阅读VC++源码，注释为乱码解决方案</p>
-<ol>
-<li>options-&gt;preferences-&gt;Syntax Formatting-&gt;Styles；</li>
-<li>在Style Name 选择 Comment，再对其Font Name 选择Pick，然后再选择“新宋体”，编码选择GB2312。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/Source Insight显示中文/" data-id="ciuh4g3dq0002k0fe9sc7zsu5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Source-Insight-中文/">Source Insight 中文</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-GIT for Linux安装" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/06/GIT for Linux安装/" class="article-date">
@@ -533,6 +489,49 @@ uip_create_unspecified(&amp;server_conn-&gt;ripaddr);</code><br>主机给节点�
 
 
   
+    <article id="post-CONTIKI/CONTIKI应用之IO口应用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/CONTIKI/CONTIKI应用之IO口应用/" class="article-date">
+  <time datetime="2016-05-06T14:32:10.914Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/06/CONTIKI/CONTIKI应用之IO口应用/">CONTIKI应用之IO口应用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。</p>
+<p>CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中</p>
+<pre><code>#define PORT_CLEAR(port,pin)         PORT_CLEAR_X(port,pin) PORT_CLEAR_X(port,pin)
+#define PORT_TOGGLE(port,pin)        PORT_TOGGLE_X(port,pin) PORT_TOGGLE_X(port,pin)
+</code></pre><p>PORT_CLEAR和PORT_TOGGLE的宏定义错误。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/06/CONTIKI/CONTIKI应用之IO口应用/" data-id="ciuh4g3fl000lk0feett9a06c" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CONTIKI-I-O口/">CONTIKI,I/O口</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
 
 
   <nav id="page-nav">
@@ -597,7 +596,7 @@ uip_create_unspecified(&amp;server_conn-&gt;ripaddr);</code><br>主机给节点�
           </li>
         
           <li>
-            <a href="/2016/09/06/SmartSeat/LM358应用/">(no title)</a>
+            <a href="/2016/09/06/Altium Designer/画板总结(二)/">画板总结（电子设计竞赛画板总结）</a>
           </li>
         
       </ul>
