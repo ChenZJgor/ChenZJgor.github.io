@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
-  
+  <title>我的博客</title>
+  <subtitle>一个博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
@@ -9,7 +9,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Zhenjie Chen</name>
     
   </author>
   
@@ -133,6 +133,35 @@
   </entry>
   
   <entry>
+    <title>Source Insight显示中文</title>
+    <link href="http://yoursite.com/2016/10/20/Source%20Insight%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/"/>
+    <id>http://yoursite.com/2016/10/20/Source Insight显示中文/</id>
+    <published>2016-10-20T08:59:33.888Z</published>
+    <updated>2016-10-20T08:59:33.889Z</updated>
+    
+    <content type="html">&lt;p&gt;source insight 中文注释为乱码解决&lt;/p&gt;
+&lt;p&gt;source insight 阅读VC++源码，注释为乱码解决方案&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;options-&amp;gt;preferences-&amp;gt;Syntax Formatting-&amp;gt;Styles；&lt;/li&gt;
+&lt;li&gt;在Style Name 选择 Comment，再对其Font Name 选择Pick，然后再选择“新宋体”，编码选择GB2312。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;source insight 中文注释为乱码解决&lt;/p&gt;
+&lt;p&gt;source insight 阅读VC++源码，注释为乱码解决方案&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;options-&amp;gt;preferences-&amp;gt;Syntax Formatting-&amp;gt;Styles；&lt;
+    
+    </summary>
+    
+    
+      <category term="Source Insight 中文" scheme="http://yoursite.com/tags/Source-Insight-%E4%B8%AD%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
     <title>电池电量检测</title>
     <link href="http://yoursite.com/2016/10/20/SmartSeat/%E7%94%B5%E6%B1%A0%E7%94%B5%E9%87%8F%E6%A3%80%E6%B5%8B/"/>
     <id>http://yoursite.com/2016/10/20/SmartSeat/电池电量检测/</id>
@@ -160,35 +189,6 @@
     
     
       <category term="电量检测" scheme="http://yoursite.com/tags/%E7%94%B5%E9%87%8F%E6%A3%80%E6%B5%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Source Insight显示中文</title>
-    <link href="http://yoursite.com/2016/10/20/Source%20Insight%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/"/>
-    <id>http://yoursite.com/2016/10/20/Source Insight显示中文/</id>
-    <published>2016-10-20T08:59:33.888Z</published>
-    <updated>2016-10-20T08:59:33.889Z</updated>
-    
-    <content type="html">&lt;p&gt;source insight 中文注释为乱码解决&lt;/p&gt;
-&lt;p&gt;source insight 阅读VC++源码，注释为乱码解决方案&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;options-&amp;gt;preferences-&amp;gt;Syntax Formatting-&amp;gt;Styles；&lt;/li&gt;
-&lt;li&gt;在Style Name 选择 Comment，再对其Font Name 选择Pick，然后再选择“新宋体”，编码选择GB2312。&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;source insight 中文注释为乱码解决&lt;/p&gt;
-&lt;p&gt;source insight 阅读VC++源码，注释为乱码解决方案&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;options-&amp;gt;preferences-&amp;gt;Syntax Formatting-&amp;gt;Styles；&lt;
-    
-    </summary>
-    
-    
-      <category term="Source Insight 中文" scheme="http://yoursite.com/tags/Source-Insight-%E4%B8%AD%E6%96%87/"/>
     
   </entry>
   
@@ -574,33 +574,6 @@ uip_create_unspecified(&amp;amp;server_conn-&amp;gt;ripaddr);&lt;/code&gt;&lt;br
   </entry>
   
   <entry>
-    <title>CONTIKI应用之IO口应用</title>
-    <link href="http://yoursite.com/2016/10/20/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BIO%E5%8F%A3%E5%BA%94%E7%94%A8/"/>
-    <id>http://yoursite.com/2016/10/20/CONTIKI/CONTIKI应用之IO口应用/</id>
-    <published>2016-10-20T08:59:33.871Z</published>
-    <updated>2016-10-20T08:59:33.871Z</updated>
-    
-    <content type="html">&lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
-&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port,pin)         PORT_CLEAR_X(port,pin) PORT_CLEAR_X(port,pin)
-#define PORT_TOGGLE(port,pin)        PORT_TOGGLE_X(port,pin) PORT_TOGGLE_X(port,pin)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;PORT_CLEAR和PORT_TOGGLE的宏定义错误。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
-&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port
-    
-    </summary>
-    
-    
-      <category term="CONTIKI,I/O口" scheme="http://yoursite.com/tags/CONTIKI-I-O%E5%8F%A3/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CONTIKI应用之Ubuntu环境下开发</title>
     <link href="http://yoursite.com/2016/10/20/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BUbuntu%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%BC%80%E5%8F%91/"/>
     <id>http://yoursite.com/2016/10/20/CONTIKI/CONTIKI应用之Ubuntu环境下开发/</id>
@@ -626,6 +599,33 @@ uip_create_unspecified(&amp;amp;server_conn-&amp;gt;ripaddr);&lt;/code&gt;&lt;br
     
     
       <category term="CONTIKI,Ubuntu" scheme="http://yoursite.com/tags/CONTIKI-Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CONTIKI应用之IO口应用</title>
+    <link href="http://yoursite.com/2016/10/20/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BIO%E5%8F%A3%E5%BA%94%E7%94%A8/"/>
+    <id>http://yoursite.com/2016/10/20/CONTIKI/CONTIKI应用之IO口应用/</id>
+    <published>2016-10-20T08:59:33.871Z</published>
+    <updated>2016-10-20T08:59:33.871Z</updated>
+    
+    <content type="html">&lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
+&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port,pin)         PORT_CLEAR_X(port,pin) PORT_CLEAR_X(port,pin)
+#define PORT_TOGGLE(port,pin)        PORT_TOGGLE_X(port,pin) PORT_TOGGLE_X(port,pin)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;PORT_CLEAR和PORT_TOGGLE的宏定义错误。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
+&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port
+    
+    </summary>
+    
+    
+      <category term="CONTIKI,I/O口" scheme="http://yoursite.com/tags/CONTIKI-I-O%E5%8F%A3/"/>
     
   </entry>
   

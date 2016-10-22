@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="uCOSIII,信号量," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -86,42 +86,16 @@
 
 
 
-<meta name="description" content="uCOSIII可以使用信号量，使用方法：
-
-创建信号量变量
-
-1OS_SEM ActiveSem;		//激活信号量
-
-创建信号量（创建前必须进入临界区）
-
-1234OSSemCreate ((OS_SEM*)	&amp;amp;ActiveSem,				//创建应变片激活状态信号量			   (CPU_CHAR*) &quot;ActiveSem&quot;,			   (OS_SEM_CTR)0,			   (OS_E">
-<meta property="og:type" content="article">
-<meta property="og:title" content="uCOSIII应用之信号量应用">
-<meta property="og:url" content="http://yoursite.com/2016/10/20/SmartSeat/uCOSIII应用之信号量应用/index.html">
+<meta name="description" content="一个博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="标签">
+<meta property="og:url" content="http://yoursite.com/tags/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="uCOSIII可以使用信号量，使用方法：
-
-创建信号量变量
-
-1OS_SEM ActiveSem;		//激活信号量
-
-创建信号量（创建前必须进入临界区）
-
-1234OSSemCreate ((OS_SEM*)	&amp;amp;ActiveSem,				//创建应变片激活状态信号量			   (CPU_CHAR*) &quot;ActiveSem&quot;,			   (OS_SEM_CTR)0,			   (OS_E">
-<meta property="og:image" content="http://yoursite.com/images/SmartSeat/uCOSIII信号量命令.jpg">
-<meta property="og:updated_time" content="2016-10-20T08:59:33.887Z">
+<meta property="og:description" content="一个博客">
+<meta property="og:updated_time" content="2016-10-22T07:37:14.344Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="uCOSIII应用之信号量应用">
-<meta name="twitter:description" content="uCOSIII可以使用信号量，使用方法：
-
-创建信号量变量
-
-1OS_SEM ActiveSem;		//激活信号量
-
-创建信号量（创建前必须进入临界区）
-
-1234OSSemCreate ((OS_SEM*)	&amp;amp;ActiveSem,				//创建应变片激活状态信号量			   (CPU_CHAR*) &quot;ActiveSem&quot;,			   (OS_SEM_CTR)0,			   (OS_E">
-<meta name="twitter:image" content="http://yoursite.com/images/SmartSeat/uCOSIII信号量命令.jpg">
+<meta name="twitter:title" content="标签">
+<meta name="twitter:description" content="一个博客">
 
 
 
@@ -142,10 +116,16 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/20/SmartSeat/uCOSIII应用之信号量应用/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/"/>
 
 
-  <title> uCOSIII应用之信号量应用 | 我的博客 </title>
+  <title>
+  
+
+  
+    标签 | 我的博客
+  
+</title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -166,7 +146,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -266,146 +246,24 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                uCOSIII应用之信号量应用
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-20T16:59:33+08:00" content="2016-10-20">
-              2016-10-20
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+      <div class="tag-cloud">
+        <div class="tag-cloud-title">
+            目前共计 22 个标签
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>uCOSIII可以使用信号量，使用方法：</p>
-<ol>
-<li>创建信号量变量</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OS_SEM ActiveSem;		//激活信号量</span><br></pre></td></tr></table></figure>
-<ol>
-<li>创建信号量（创建前必须进入临界区）</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">OSSemCreate ((OS_SEM*)	&amp;ActiveSem,				//创建应变片激活状态信号量</span><br><span class="line">			   (CPU_CHAR*) "ActiveSem",</span><br><span class="line">			   (OS_SEM_CTR)0,</span><br><span class="line">			   (OS_ERR*)	&amp;err);</span><br></pre></td></tr></table></figure>
-<ol>
-<li>相关指令<br><img src="/images/SmartSeat/uCOSIII信号量命令.jpg" alt=""></li>
-</ol>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/uCOSIII-信号量/" rel="tag">#uCOSIII,信号量</a>
-          
+        <div class="tag-cloud-tags">
+          <a href="/tags/12864-串口/" style="font-size: 12px; color: #ccc">12864,串口</a> <a href="/tags/Altium-Designer-敷铜安全距离/" style="font-size: 12px; color: #ccc">Altium Designer,敷铜安全距离</a> <a href="/tags/CONTIKI-I-O口/" style="font-size: 12px; color: #ccc">CONTIKI,I/O口</a> <a href="/tags/CONTIKI-Ubuntu/" style="font-size: 12px; color: #ccc">CONTIKI,Ubuntu</a> <a href="/tags/CONTIKI-static和extern/" style="font-size: 12px; color: #ccc">CONTIKI,static和extern</a> <a href="/tags/CONTIKI-串口/" style="font-size: 12px; color: #ccc">CONTIKI,串口</a> <a href="/tags/CONTIKI-传感器驱动/" style="font-size: 12px; color: #ccc">CONTIKI,传感器驱动</a> <a href="/tags/CONTIKI-网络/" style="font-size: 12px; color: #ccc">CONTIKI,网络</a> <a href="/tags/CONTIKI-驱动/" style="font-size: 12px; color: #ccc">CONTIKI,驱动</a> <a href="/tags/GIT-for-Linux/" style="font-size: 12px; color: #ccc">GIT for Linux</a> <a href="/tags/HEXO-指令/" style="font-size: 12px; color: #ccc">HEXO,指令</a> <a href="/tags/PCB板/" style="font-size: 12px; color: #ccc">PCB板</a> <a href="/tags/PCB板-经验总结/" style="font-size: 12px; color: #ccc">PCB板 经验总结</a> <a href="/tags/SSD1306-IIC/" style="font-size: 12px; color: #ccc">SSD1306,IIC</a> <a href="/tags/SSD1306-SPI/" style="font-size: 12px; color: #ccc">SSD1306,SPI</a> <a href="/tags/Source-Insight-中文/" style="font-size: 12px; color: #ccc">Source Insight 中文</a> <a href="/tags/Ubuntu-分区/" style="font-size: 12px; color: #ccc">Ubuntu,分区</a> <a href="/tags/Ubuntu-命令/" style="font-size: 12px; color: #ccc">Ubuntu,命令</a> <a href="/tags/uCOSIII-信号量/" style="font-size: 12px; color: #ccc">uCOSIII,信号量</a> <a href="/tags/uCOSIII-定时器/" style="font-size: 12px; color: #ccc">uCOSIII,定时器</a> <a href="/tags/uCOSIII-应用/" style="font-size: 12px; color: #ccc">uCOSIII,应用</a> <a href="/tags/电量检测/" style="font-size: 12px; color: #ccc">电量检测</a>
         </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/10/20/SmartSeat/uCOSIII应用/" rel="next" title="uCOSIII应用">
-                <i class="fa fa-chevron-left"></i> uCOSIII应用
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/20/SmartSeat/uCOSIII应用之定时器应用/" rel="prev" title="uCOSIII应用之定时器应用">
-                uCOSIII应用之定时器应用 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
+      </div>
     
   </div>
 
+
+          </div>
+          
+
+
+          
 
         </div>
         
@@ -425,17 +283,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -485,17 +334,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <p class="post-toc-empty">此文章未包含目录</p>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -592,10 +430,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
-
-
 
   
 
