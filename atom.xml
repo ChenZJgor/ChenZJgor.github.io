@@ -81,6 +81,33 @@
   </entry>
   
   <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/10/20/hello-world/"/>
+    <id>http://yoursite.com/2016/10/20/hello-world/</id>
+    <published>2016-10-20T08:59:33.891Z</published>
+    <updated>2016-10-20T08:59:33.892Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Ubuntu分区大小调整</title>
     <link href="http://yoursite.com/2016/10/20/Ubuntu%E5%88%86%E5%8C%BA%E5%A4%A7%E5%B0%8F%E8%B0%83%E6%95%B4/"/>
     <id>http://yoursite.com/2016/10/20/Ubuntu分区大小调整/</id>
@@ -102,35 +129,6 @@
     
     
       <category term="Ubuntu,分区" scheme="http://yoursite.com/tags/Ubuntu-%E5%88%86%E5%8C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Source Insight显示中文</title>
-    <link href="http://yoursite.com/2016/10/20/Source%20Insight%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/"/>
-    <id>http://yoursite.com/2016/10/20/Source Insight显示中文/</id>
-    <published>2016-10-20T08:59:33.888Z</published>
-    <updated>2016-10-20T08:59:33.889Z</updated>
-    
-    <content type="html">&lt;p&gt;source insight 中文注释为乱码解决&lt;/p&gt;
-&lt;p&gt;source insight 阅读VC++源码，注释为乱码解决方案&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;options-&amp;gt;preferences-&amp;gt;Syntax Formatting-&amp;gt;Styles；&lt;/li&gt;
-&lt;li&gt;在Style Name 选择 Comment，再对其Font Name 选择Pick，然后再选择“新宋体”，编码选择GB2312。&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;source insight 中文注释为乱码解决&lt;/p&gt;
-&lt;p&gt;source insight 阅读VC++源码，注释为乱码解决方案&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;options-&amp;gt;preferences-&amp;gt;Syntax Formatting-&amp;gt;Styles；&lt;
-    
-    </summary>
-    
-    
-      <category term="Source Insight 中文" scheme="http://yoursite.com/tags/Source-Insight-%E4%B8%AD%E6%96%87/"/>
     
   </entry>
   
@@ -162,6 +160,35 @@
     
     
       <category term="电量检测" scheme="http://yoursite.com/tags/%E7%94%B5%E9%87%8F%E6%A3%80%E6%B5%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Source Insight显示中文</title>
+    <link href="http://yoursite.com/2016/10/20/Source%20Insight%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/"/>
+    <id>http://yoursite.com/2016/10/20/Source Insight显示中文/</id>
+    <published>2016-10-20T08:59:33.888Z</published>
+    <updated>2016-10-20T08:59:33.889Z</updated>
+    
+    <content type="html">&lt;p&gt;source insight 中文注释为乱码解决&lt;/p&gt;
+&lt;p&gt;source insight 阅读VC++源码，注释为乱码解决方案&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;options-&amp;gt;preferences-&amp;gt;Syntax Formatting-&amp;gt;Styles；&lt;/li&gt;
+&lt;li&gt;在Style Name 选择 Comment，再对其Font Name 选择Pick，然后再选择“新宋体”，编码选择GB2312。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;source insight 中文注释为乱码解决&lt;/p&gt;
+&lt;p&gt;source insight 阅读VC++源码，注释为乱码解决方案&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;options-&amp;gt;preferences-&amp;gt;Syntax Formatting-&amp;gt;Styles；&lt;
+    
+    </summary>
+    
+    
+      <category term="Source Insight 中文" scheme="http://yoursite.com/tags/Source-Insight-%E4%B8%AD%E6%96%87/"/>
     
   </entry>
   
@@ -547,6 +574,33 @@ uip_create_unspecified(&amp;amp;server_conn-&amp;gt;ripaddr);&lt;/code&gt;&lt;br
   </entry>
   
   <entry>
+    <title>CONTIKI应用之IO口应用</title>
+    <link href="http://yoursite.com/2016/10/20/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BIO%E5%8F%A3%E5%BA%94%E7%94%A8/"/>
+    <id>http://yoursite.com/2016/10/20/CONTIKI/CONTIKI应用之IO口应用/</id>
+    <published>2016-10-20T08:59:33.871Z</published>
+    <updated>2016-10-20T08:59:33.871Z</updated>
+    
+    <content type="html">&lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
+&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port,pin)         PORT_CLEAR_X(port,pin) PORT_CLEAR_X(port,pin)
+#define PORT_TOGGLE(port,pin)        PORT_TOGGLE_X(port,pin) PORT_TOGGLE_X(port,pin)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;PORT_CLEAR和PORT_TOGGLE的宏定义错误。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
+&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port
+    
+    </summary>
+    
+    
+      <category term="CONTIKI,I/O口" scheme="http://yoursite.com/tags/CONTIKI-I-O%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CONTIKI应用之Ubuntu环境下开发</title>
     <link href="http://yoursite.com/2016/10/20/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BUbuntu%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%BC%80%E5%8F%91/"/>
     <id>http://yoursite.com/2016/10/20/CONTIKI/CONTIKI应用之Ubuntu环境下开发/</id>
@@ -576,33 +630,6 @@ uip_create_unspecified(&amp;amp;server_conn-&amp;gt;ripaddr);&lt;/code&gt;&lt;br
   </entry>
   
   <entry>
-    <title>CONTIKI应用之IO口应用</title>
-    <link href="http://yoursite.com/2016/10/20/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BIO%E5%8F%A3%E5%BA%94%E7%94%A8/"/>
-    <id>http://yoursite.com/2016/10/20/CONTIKI/CONTIKI应用之IO口应用/</id>
-    <published>2016-10-20T08:59:33.871Z</published>
-    <updated>2016-10-20T08:59:33.871Z</updated>
-    
-    <content type="html">&lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
-&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port,pin)         PORT_CLEAR_X(port,pin) PORT_CLEAR_X(port,pin)
-#define PORT_TOGGLE(port,pin)        PORT_TOGGLE_X(port,pin) PORT_TOGGLE_X(port,pin)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;PORT_CLEAR和PORT_TOGGLE的宏定义错误。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
-&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port
-    
-    </summary>
-    
-    
-      <category term="CONTIKI,I/O口" scheme="http://yoursite.com/tags/CONTIKI-I-O%E5%8F%A3/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CONTIKI应用之温湿度传感器DHT11驱动开发</title>
     <link href="http://yoursite.com/2016/10/20/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BDHT11%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
     <id>http://yoursite.com/2016/10/20/CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发/</id>
@@ -628,36 +655,6 @@ uip_create_unspecified(&amp;amp;server_conn-&amp;gt;ripaddr);&lt;/code&gt;&lt;br
     
     
       <category term="CONTIKI,驱动" scheme="http://yoursite.com/tags/CONTIKI-%E9%A9%B1%E5%8A%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>画板总结（电子设计竞赛画板总结）</title>
-    <link href="http://yoursite.com/2016/10/20/Altium%20Designer/%E7%94%BB%E6%9D%BF%E6%80%BB%E7%BB%93(%E4%BA%8C)/"/>
-    <id>http://yoursite.com/2016/10/20/Altium Designer/画板总结(二)/</id>
-    <published>2016-10-20T08:59:33.869Z</published>
-    <updated>2016-10-20T08:59:33.869Z</updated>
-    
-    <content type="html">&lt;p&gt;在2016广东大学生电子设计竞赛中，因为比赛需要画了一块电源板。虽然已多次检查，但还是出现了一个严重的错误，USB接口的电源和地定义反了（由于使用的是之前项目使用过的MicroUSB接口封装，并没有仔细检查）。&lt;/p&gt;
-&lt;p&gt;而且有个别焊盘也偏小，焊接的时候不方便&lt;/p&gt;
-&lt;p&gt;画板后的检查过程：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;对照官方PDF文档，检查器件封装是否有错。&lt;/li&gt;
-&lt;li&gt;检查焊盘大小，最好对照实物，有现成的库的尽量用现成的库，最好不要自己画。如果没有现成库，尽量把焊盘画得大些，像贴片电感、电容画得比实物尺寸长1mm都可以。&lt;/li&gt;
-&lt;li&gt;最后检查走线，线宽、线距是否足够，接地是否用敷铜等。这主要是依照经验值及芯片文档说明。&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在2016广东大学生电子设计竞赛中，因为比赛需要画了一块电源板。虽然已多次检查，但还是出现了一个严重的错误，USB接口的电源和地定义反了（由于使用的是之前项目使用过的MicroUSB接口封装，并没有仔细检查）。&lt;/p&gt;
-&lt;p&gt;而且有个别焊盘也偏小，焊接的时候不方便&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-      <category term="PCB板" scheme="http://yoursite.com/tags/PCB%E6%9D%BF/"/>
     
   </entry>
   

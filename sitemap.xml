@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2016/10/20/hello-world/</loc>
+    
+    <lastmod>2016-10-20T08:59:33.892Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/10/20/Ubuntu%E5%91%BD%E4%BB%A4%E5%BD%92%E7%BA%B3/</loc>
     
     <lastmod>2016-10-20T08:59:33.891Z</lastmod>
@@ -159,13 +166,6 @@
     <loc>http://yoursite.com/Indexs/index.html</loc>
     
     <lastmod>2016-10-20T08:59:33.866Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/05/06/hello-world/</loc>
-    
-    <lastmod>2016-05-06T13:48:31.237Z</lastmod>
     
   </url>
   
