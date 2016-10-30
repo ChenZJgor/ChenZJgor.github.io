@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/10/20/LINUX/Ubuntu%E5%91%BD%E4%BB%A4%E5%BD%92%E7%BA%B3/</loc>
+    
+    <lastmod>2016-10-30T02:23:32.436Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Indexs/index.html</loc>
     
-    <lastmod>2016-10-22T08:07:58.186Z</lastmod>
+    <lastmod>2016-10-30T02:22:59.302Z</lastmod>
     
   </url>
   
@@ -37,21 +44,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/20/Ubuntu%E5%91%BD%E4%BB%A4%E5%BD%92%E7%BA%B3/</loc>
-    
-    <lastmod>2016-10-20T08:59:33.891Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/20/Ubuntu%E5%88%86%E5%8C%BA%E5%A4%A7%E5%B0%8F%E8%B0%83%E6%95%B4/</loc>
+    <loc>http://yoursite.com/2016/10/20/LINUX/Ubuntu%E5%88%86%E5%8C%BA%E5%A4%A7%E5%B0%8F%E8%B0%83%E6%95%B4/</loc>
     
     <lastmod>2016-10-20T08:59:33.890Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/20/Source%20Insight%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/</loc>
+    <loc>http://yoursite.com/2016/10/20/Software%20Skill/Source%20Insight%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/</loc>
     
     <lastmod>2016-10-20T08:59:33.889Z</lastmod>
     
@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/20/SmartSeat/uCOSIII%E5%BA%94%E7%94%A8%E4%B9%8B%E5%AE%9A%E6%97%B6%E5%99%A8%E5%BA%94%E7%94%A8/</loc>
+    <loc>http://yoursite.com/2016/10/20/SmartSeat/uCOSIII%E5%BA%94%E7%94%A8%E4%B9%8B%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%BA%94%E7%94%A8/</loc>
     
     <lastmod>2016-10-20T08:59:33.887Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/20/SmartSeat/uCOSIII%E5%BA%94%E7%94%A8%E4%B9%8B%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%BA%94%E7%94%A8/</loc>
+    <loc>http://yoursite.com/2016/10/20/SmartSeat/uCOSIII%E5%BA%94%E7%94%A8%E4%B9%8B%E5%AE%9A%E6%97%B6%E5%99%A8%E5%BA%94%E7%94%A8/</loc>
     
     <lastmod>2016-10-20T08:59:33.887Z</lastmod>
     
@@ -86,7 +86,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/20/GIT%20for%20Linux%E5%AE%89%E8%A3%85/</loc>
+    <loc>http://yoursite.com/2016/10/20/LINUX/GIT%20for%20Linux%E5%AE%89%E8%A3%85/</loc>
     
     <lastmod>2016-10-20T08:59:33.882Z</lastmod>
     
@@ -170,14 +170,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/20/Altium%20Designer/Altium%20Designer%E8%AE%BE%E7%BD%AE%E6%95%B7%E9%93%9C%E5%AE%89%E5%85%A8%E8%B7%9D%E7%A6%BB/</loc>
+    <loc>http://yoursite.com/2016/10/20/Altium%20Designer/PCB%E6%9D%BF%E7%BB%98%E5%88%B6%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/</loc>
     
     <lastmod>2016-10-20T08:59:33.868Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/20/Altium%20Designer/PCB%E6%9D%BF%E7%BB%98%E5%88%B6%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/</loc>
+    <loc>http://yoursite.com/2016/10/20/Altium%20Designer/Altium%20Designer%E8%AE%BE%E7%BD%AE%E6%95%B7%E9%93%9C%E5%AE%89%E5%85%A8%E8%B7%9D%E7%A6%BB/</loc>
     
     <lastmod>2016-10-20T08:59:33.868Z</lastmod>
     
