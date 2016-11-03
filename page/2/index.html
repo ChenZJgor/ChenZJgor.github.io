@@ -173,52 +173,52 @@
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-主页">
+        <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            menu.主页
+            首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-归档">
+        <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            menu.归档
+            归档
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-目录">
+        <li class="menu-item menu-item-indexs">
           <a href="/Indexs/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
             
-            menu.目录
+            目录
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-标签">
+        <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            menu.标签
+            标签
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-分类">
+        <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            menu.分类
+            分类
           </a>
         </li>
       
@@ -239,6 +239,333 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/20/SmartSeat/uCOSIII应用之信号量应用/" itemprop="url">
+                  uCOSIII应用之信号量应用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-20T16:59:33+08:00" content="2016-10-20">
+              2016-10-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>uCOSIII可以使用信号量，使用方法：</p>
+<ol>
+<li>创建信号量变量</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OS_SEM ActiveSem;		//激活信号量</span><br></pre></td></tr></table></figure>
+<ol>
+<li>创建信号量（创建前必须进入临界区）</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">OSSemCreate ((OS_SEM*)	&amp;ActiveSem,				//创建应变片激活状态信号量</span><br><span class="line">			   (CPU_CHAR*) "ActiveSem",</span><br><span class="line">			   (OS_SEM_CTR)0,</span><br><span class="line">			   (OS_ERR*)	&amp;err);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>相关指令<br><img src="/images/SmartSeat/uCOSIII信号量命令.jpg" alt=""></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/20/SmartSeat/uCOSIII应用/" itemprop="url">
+                  uCOSIII应用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-20T16:59:33+08:00" content="2016-10-20">
+              2016-10-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>智能坐垫的设计用到了uCOSIII实时操作系统。uCOSIII系统使用说明：</p>
+<ol>
+<li>创建任务块</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//任务优先级</span><br><span class="line">#define START_TASK_PRIO		3</span><br><span class="line">//任务堆栈大小	</span><br><span class="line">#define START_STK_SIZE 		512</span><br><span class="line">//任务控制块</span><br><span class="line">OS_TCB StartTaskTCB;</span><br><span class="line">//任务堆栈	</span><br><span class="line">CPU_STK START_TASK_STK[START_STK_SIZE];</span><br><span class="line">//任务函数</span><br><span class="line">void start_task(void *p_arg);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在main函数中初始化系统，创建START任务</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">OSInit(&amp;err);		//初始化UCOSIII</span><br><span class="line">OS_CRITICAL_ENTER();//进入临界区</span><br><span class="line">//创建开始任务</span><br><span class="line">OSTaskCreate((OS_TCB 	* )&amp;StartTaskTCB,		//任务控制块</span><br><span class="line">			 (CPU_CHAR	* )"start task", 		//任务名字</span><br><span class="line">			 (OS_TASK_PTR )start_task, 			//任务函数</span><br><span class="line">			 (void		* )0,					//传递给任务函数的参数</span><br><span class="line">			 (OS_PRIO	  )START_TASK_PRIO,     //任务优先级</span><br><span class="line">			 (CPU_STK   * )&amp;START_TASK_STK[0],	//任务堆栈基地址</span><br><span class="line">			 (CPU_STK_SIZE)START_STK_SIZE/10,	//任务堆栈深度限位</span><br><span class="line">			 (CPU_STK_SIZE)START_STK_SIZE,		//任务堆栈大小</span><br><span class="line">			 (OS_MSG_QTY  )0,					//任务内部消息队列能够接收的最大消息数目,为0时禁止接收消息</span><br><span class="line">			 (OS_TICK	  )0,					//当使能时间片轮转时的时间片长度，为0时为默认长度，</span><br><span class="line">			 (void   	* )0,					//用户补充的存储区</span><br><span class="line">			 (OS_OPT      )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR, //任务选项</span><br><span class="line">			 (OS_ERR 	* )&amp;err);				//存放该函数错误时的返回值</span><br><span class="line">OS_CRITICAL_EXIT();	//退出临界区	 </span><br><span class="line">OSStart(&amp;err);  //开启UCOSIII</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在START任务中进行系统设置<br>(1)统计任务、中断关闭时间测量、时间片轮转功能使能<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#if OS_CFG_STAT_TASK_EN &gt; 0u</span><br><span class="line">   OSStatTaskCPUUsageInit(&amp;err);  	//统计任务                </span><br><span class="line">#endif</span><br><span class="line">	</span><br><span class="line">#ifdef CPU_CFG_INT_DIS_MEAS_EN		//如果使能了测量中断关闭时间</span><br><span class="line">    CPU_IntDisMeasMaxCurReset();	</span><br><span class="line">#endif</span><br><span class="line">	</span><br><span class="line">#if	OS_CFG_SCHED_ROUND_ROBIN_EN  //当使用时间片轮转的时候</span><br><span class="line">	 //使能时间片轮转调度功能,时间片长度为1个系统时钟节拍，既1*5=5ms</span><br><span class="line">	OSSchedRoundRobinCfg(DEF_ENABLED,1,&amp;err);  </span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>(2)创建定时器(如果有使用)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">	//创建应变片激活定时器</span><br><span class="line">OSTmrCreate((OS_TMR		*)&amp;tmr_active,		//激活定时器</span><br><span class="line">			(CPU_CHAR	*)"tmr active",		//定时器名字</span><br><span class="line">			(OS_TICK	 )0,			//0</span><br><span class="line">			(OS_TICK	 )100,          //100*10=1000ms</span><br><span class="line">			(OS_OPT		 )OS_OPT_TMR_PERIODIC, //周期模式</span><br><span class="line">			(OS_TMR_CALLBACK_PTR)tmr_active_callback,//激活定时器回调函数</span><br><span class="line">			(void	    *)0,			//参数为0</span><br><span class="line">			(OS_ERR	    *)&amp;err);		//返回的错误码</span><br></pre></td></tr></table></figure>
+<p>(3)创建信号量和各任务(如果有使用)<br><strong>注意：创建之前必须进入临界区</strong><code>OS_CRITICAL_ENTER();    //进入临界区</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">OSSemCreate ((OS_SEM*)	&amp;ActiveSem,				//创建应变片激活状态信号量</span><br><span class="line">			   (CPU_CHAR*) "ActiveSem",</span><br><span class="line">			   (OS_SEM_CTR)0,</span><br><span class="line">			   (OS_ERR*)	&amp;err);</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//创建系统核心任务</span><br><span class="line">OSTaskCreate((OS_TCB 	* )&amp;CORETaskTCB,		</span><br><span class="line">			 (CPU_CHAR	* )"core task", 		</span><br><span class="line">			 (OS_TASK_PTR )core_task, 			</span><br><span class="line">			 (void		* )0,					</span><br><span class="line">			 (OS_PRIO	  )CORE_TASK_PRIO,     </span><br><span class="line">			 (CPU_STK   * )&amp;CORE_TASK_STK[0],	</span><br><span class="line">			 (CPU_STK_SIZE)CORE_STK_SIZE/10,	</span><br><span class="line">			 (CPU_STK_SIZE)CORE_STK_SIZE,		</span><br><span class="line">			 (OS_MSG_QTY  )0,					</span><br><span class="line">			 (OS_TICK	  )0,					</span><br><span class="line">			 (void   	* )0,					</span><br><span class="line">			 (OS_OPT      )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,</span><br><span class="line">			 (OS_ERR 	* )&amp;err);</span><br></pre></td></tr></table></figure>
+<p>(4)挂起任务和退出临界区</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">OS_TaskSuspend((OS_TCB*)&amp;StartTaskTCB,&amp;err);		//挂起开始任务			 </span><br><span class="line">OS_CRITICAL_EXIT();	//退出临界区</span><br></pre></td></tr></table></figure>
+<ol>
+<li>各任务函数编写</li>
+</ol>
+<p>每一个任务必须是死循环，在死循环中加入一个可以挂起任务的函数，以实现任务调度</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void active_task(void *p_arg)</span><br><span class="line">&#123;</span><br><span class="line">	OS_ERR err;</span><br><span class="line">	p_arg = p_arg;</span><br><span class="line">	</span><br><span class="line">	while(1)&#123;</span><br><span class="line">	</span><br><span class="line">	......</span><br><span class="line"></span><br><span class="line">		OSTimeDlyHMSM(0,0,1,0,OS_OPT_TIME_HMSM_STRICT,&amp;err); //延时1s</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>最后一个参数都是错误反馈</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/20/LINUX/GIT for Linux安装/" itemprop="url">
+                  GIT for Linux安装
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-20T16:59:33+08:00" content="2016-10-20">
+              2016-10-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>因为最近在做CONTIKI系统应用的开发，要用到GIT。在Ubuntu上安装GIT时遇到一个问题，编译的时候报错</p>
+<pre><code>Writing perl.mak for Git
+make[2]: *** [perl.mak] Error 1
+make[1]: *** [instlibdir] Error 2
+make: *** [git-add--interactive] Error 2
+</code></pre><p>一开始以为是缺少环境，几次检查后确定没有问题。最后发现是系统时间设置错误，系统的时间早于版本的时间，在时间正确设置后，问题解决。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -960,303 +1287,6 @@ uip_create_unspecified(&amp;server_conn-&gt;ripaddr);</code><br>主机给节点�
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/20/CONTIKI/CONTIKI应用之IO口应用/" itemprop="url">
-                  CONTIKI应用之IO口应用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-20T16:59:33+08:00" content="2016-10-20">
-              2016-10-20
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。</p>
-<p>CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中</p>
-<pre><code>#define PORT_CLEAR(port,pin)         PORT_CLEAR_X(port,pin) PORT_CLEAR_X(port,pin)
-#define PORT_TOGGLE(port,pin)        PORT_TOGGLE_X(port,pin) PORT_TOGGLE_X(port,pin)
-</code></pre><p>PORT_CLEAR和PORT_TOGGLE的宏定义错误。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/20/CONTIKI/CONTIKI应用之Ubuntu环境下开发/" itemprop="url">
-                  CONTIKI应用之Ubuntu环境下开发
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-20T16:59:33+08:00" content="2016-10-20">
-              2016-10-20
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>CONTIKI系统默认是在Ubuntu下使用SDCC开发的，因为SDCC采用的是GCC编译器，与Windows下的IAR或KEIL还是有很大的不同。</p>
-<ol>
-<li>使用SDCC必须要写好Makefile文件，这样编译器才能在编译时找到相应的文件。</li>
-<li>因为GCC编译器是使用标准C，所以在IAR上能编译成功不代表在SDCC上也能编译成功。例如我在编译时遇到一个问题，提示“变量初始化的值不能为变量”。这是因为标准C规定变量初始化时一定要为常量，如果要用变量赋值，必须要在函数或宏定义中。</li>
-<li>因为CC2530的栈空间不够，所以CONTIKI系统CC2530平台上的UDP-IPV6例程有重启的问题。所以对于CC2530平台，在没有修改UIP协议栈的情况下，不能作为ROOT节点。解决方法是使用sensinode分支的源代码，该分支的版本是CONTIKI2.6，修改了部分文件的代码减少堆栈开销。</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/20/CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发/" itemprop="url">
-                  CONTIKI应用之温湿度传感器DHT11驱动开发
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-20T16:59:33+08:00" content="2016-10-20">
-              2016-10-20
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>参加学校的挑战杯比赛，我们小组的项目是基于CONTIKI系统的，使用CC2530平台，所以需要为传感器开发底层驱动。</p>
-<p>DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输出公用一个端口，对时序的要求比较高。</p>
-<p>在开发过程中我遇到了一下几个问题:</p>
-<ol>
-<li>关闭CONTIKI的看门狗才能在程序中调用单片机的IO口。原因可能是打开看门狗后不能用IAR的单步调试。（暂解决）</li>
-<li>用示波器捕捉波形发现，主机发送开始信号后，DHT11没有进入采集模式，无数据输出。原因是驱动时序出错，当DHT11输出“1”时，没有先等DHT11拉低就进入了下一位的读取，导致整个时序出错。（已解决）<br><img src="/images/CONTIKI/DHT11.jpg" alt="DHT11"></li>
-</ol>
-<h3 id="在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I-O口设置，这方面出错的可能性很大。"><a href="#在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I-O口设置，这方面出错的可能性很大。" class="headerlink" title="在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I/O口设置，这方面出错的可能性很大。"></a><strong>在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I/O口设置，这方面出错的可能性很大。</strong></h3>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1301,8 +1331,8 @@ uip_create_unspecified(&amp;server_conn-&gt;ripaddr);</code><br>主机给节点�
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
-            <a href="/">
-              <span class="site-state-item-count">23</span>
+            <a href="/archives/">
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1311,10 +1341,10 @@ uip_create_unspecified(&amp;server_conn-&gt;ripaddr);</code><br>主机给节点�
 
           
             <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">22</span>
+              <a href="/tags/">
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 

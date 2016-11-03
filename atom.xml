@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-20T10:26:23.085Z</updated>
+  <updated>2016-11-03T01:36:09.732Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,112 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2016广东省大学生电子设计大赛总结</title>
+    <link href="http://yoursite.com/2016/11/02/GDUED2016/2016%E5%B9%BF%E4%B8%9C%E7%9C%81%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2016/11/02/GDUED2016/2016广东省大学生电子设计大赛总结/</id>
+    <published>2016-11-02T14:50:00.000Z</published>
+    <updated>2016-11-03T01:36:09.732Z</updated>
+    
+    <content type="html">&lt;p&gt;2016年广东省大学生电子设计大赛的比赛主题是“健康电子”，比赛时间从5月到8月，有三个月的时间。&lt;br&gt;从7月开始做准备，我的工作主要包括硬件电路设计、电路板的绘制和底层驱动的编写。&lt;/p&gt;
+&lt;h2 id=&quot;硬件电路设计&quot;&gt;&lt;a href=&quot;#硬件电路设计&quot; class=&quot;headerlink&quot; title=&quot;硬件电路设计&quot;&gt;&lt;/a&gt;硬件电路设计&lt;/h2&gt;&lt;p&gt;主控芯片采用STM32的核心板，其他外围元件则采用万用板搭建。该种方法保证了系统的稳定性和灵活性，但搭建的难度也加大（主要是太累了，全部是用飞线手工焊接）。&lt;br&gt;&lt;strong&gt;运行过程中遇到了几个问题&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;STM32有时会卡死。估计是因为:&lt;br&gt;a.电路中有电机对电源有干扰&lt;br&gt;b.或者是因为当电池电量过低时系统供电不稳定&lt;/li&gt;
+&lt;li&gt;系统耗电大。800mAh的电池只能用8小时，估计是因为三极管漏电造成。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;电路板绘制&quot;&gt;&lt;a href=&quot;#电路板绘制&quot; class=&quot;headerlink&quot; title=&quot;电路板绘制&quot;&gt;&lt;/a&gt;电路板绘制&lt;/h2&gt;&lt;p&gt;虽然时间紧迫，但由于只需绘制电源PCB板，工作量并不多，几天的时间就完成了电源板的绘制。&lt;br&gt;但其中还是出现了几点错误：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;MicroUSB接口引脚定义错误。&lt;/li&gt;
+&lt;li&gt;5V开关电源电路设计有错误，输出电压波动很大。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因此，以后的电路设计中应注意&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;收集常用的元件封装。&lt;/li&gt;
+&lt;li&gt;参考生产厂家的PCB样板。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;底层程序设计&quot;&gt;&lt;a href=&quot;#底层程序设计&quot; class=&quot;headerlink&quot; title=&quot;底层程序设计&quot;&gt;&lt;/a&gt;底层程序设计&lt;/h2&gt;&lt;p&gt;由于使用STM32作为主控芯片，所以有足够的资源运行uCOSIII实时操作系统。之所以选择uCOSIII实时操作系统，是因为这个操作系统教学资源最多，相比其他的实时操作系统更容易上手。&lt;br&gt;我选择的是正点原子的开发板教程，由于时间紧迫，并且是第一次使用实时操作系统和STM32单片机，代码写得很粗糙，算法也没有特别考究，不过功能还是实现了。&lt;/p&gt;
+&lt;h2 id=&quot;程序烧写&quot;&gt;&lt;a href=&quot;#程序烧写&quot; class=&quot;headerlink&quot; title=&quot;程序烧写&quot;&gt;&lt;/a&gt;程序烧写&lt;/h2&gt;&lt;p&gt;使用SWD模式只需4根线就可以实现程序烧写，分别是SWCLK,SWDIO,3V3和GND。&lt;br&gt;在SWD模式无法烧写时可以改用ISP烧写，注意BOOT模式的选择。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2016年广东省大学生电子设计大赛的比赛主题是“健康电子”，比赛时间从5月到8月，有三个月的时间。&lt;br&gt;从7月开始做准备，我的工作主要包括硬件电路设计、电路板的绘制和底层驱动的编写。&lt;/p&gt;
+&lt;h2 id=&quot;硬件电路设计&quot;&gt;&lt;a href=&quot;#硬件电路设计&quot; class=
+    
+    </summary>
+    
+    
+      <category term="电子设计,比赛" scheme="http://yoursite.com/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1-%E6%AF%94%E8%B5%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一些关于电路和C语言的问答</title>
+    <link href="http://yoursite.com/2016/10/30/Post%20Address/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8E%E7%94%B5%E8%B7%AF%E5%92%8CC%E8%AF%AD%E8%A8%80%E7%9A%84%E9%97%AE%E7%AD%94/"/>
+    <id>http://yoursite.com/2016/10/30/Post Address/一些关于电路和C语言的问答/</id>
+    <published>2016-10-30T14:40:00.000Z</published>
+    <updated>2016-11-02T14:23:06.191Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;一些关于电路和C语言的问答，感觉比较有用，所以收集下来&quot;&gt;&lt;a href=&quot;#一些关于电路和C语言的问答，感觉比较有用，所以收集下来&quot; class=&quot;headerlink&quot; title=&quot;一些关于电路和C语言的问答，感觉比较有用，所以收集下来&quot;&gt;&lt;/a&gt;一些关于电路和C语言的问答，感觉比较有用，所以收集下来&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://bbs.21ic.com/forum.php?mod=viewthread&amp;amp;tid=1631858&amp;amp;fromguid=hot&amp;amp;extra=&amp;amp;mobile=2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;数字地和模拟地怎样连接最好&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://bbs.21ic.com/icview-1637488-1-1.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一个关于C语言指针的问题&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://bbs.21ic.com/forum.php?mod=viewthread&amp;amp;tid=1632106&amp;amp;fromguid=hot&amp;amp;extra=&amp;amp;mobile=2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如何判断一个纽扣电池的电量&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://bbs.21ic.com/forum.php?mod=viewthread&amp;amp;tid=1621000&amp;amp;fromguid=hot&amp;amp;extra=&amp;amp;mobile=2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;十种经典滤波方法&lt;/a&gt;&lt;br&gt;也不知道能不能用到，先收着吧&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一些关于电路和C语言的问答，感觉比较有用，所以收集下来&quot;&gt;&lt;a href=&quot;#一些关于电路和C语言的问答，感觉比较有用，所以收集下来&quot; class=&quot;headerlink&quot; title=&quot;一些关于电路和C语言的问答，感觉比较有用，所以收集下来&quot;&gt;&lt;/a&gt;一些关于电
+    
+    </summary>
+    
+    
+      <category term="电路,C语言,问答" scheme="http://yoursite.com/tags/%E7%94%B5%E8%B7%AF-C%E8%AF%AD%E8%A8%80-%E9%97%AE%E7%AD%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实用网址</title>
+    <link href="http://yoursite.com/2016/10/23/Post%20Address/%E5%AE%9E%E7%94%A8%E7%BD%91%E5%9D%80/"/>
+    <id>http://yoursite.com/2016/10/23/Post Address/实用网址/</id>
+    <published>2016-10-23T09:51:00.000Z</published>
+    <updated>2016-11-02T14:22:23.578Z</updated>
+    
+    <content type="html">&lt;p&gt; &lt;strong&gt;一些常用的网址收藏&lt;/strong&gt; &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;APP下载&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.coolapk.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;酷安网&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.apkmirror.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;APKMirror&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;虚拟通道账号提供商&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/faf9e152f6fd&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GreenVPN网址&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt; &lt;strong&gt;一些常用的网址收藏&lt;/strong&gt; &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;APP下载&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.coolapk.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;酷安网&lt;/a&gt;&lt;/
+    
+    </summary>
+    
+    
+      <category term="网址" scheme="http://yoursite.com/tags/%E7%BD%91%E5%9D%80/"/>
+    
+  </entry>
   
   <entry>
     <title>HEXO指令归纳</title>
@@ -50,33 +156,6 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/10/20/hello-world/"/>
-    <id>http://yoursite.com/2016/10/20/hello-world/</id>
-    <published>2016-10-20T08:59:33.891Z</published>
-    <updated>2016-10-20T08:59:33.892Z</updated>
-    
-    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Ubuntu命令归纳</title>
     <link href="http://yoursite.com/2016/10/20/LINUX/Ubuntu%E5%91%BD%E4%BB%A4%E5%BD%92%E7%BA%B3/"/>
     <id>http://yoursite.com/2016/10/20/LINUX/Ubuntu命令归纳/</id>
@@ -102,6 +181,33 @@
     
     
       <category term="Ubuntu,命令" scheme="http://yoursite.com/tags/Ubuntu-%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/10/20/hello-world/"/>
+    <id>http://yoursite.com/2016/10/20/hello-world/</id>
+    <published>2016-10-20T08:59:33.891Z</published>
+    <updated>2016-10-20T08:59:33.892Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
     
   </entry>
   
@@ -568,91 +674,6 @@ uip_create_unspecified(&amp;amp;server_conn-&amp;gt;ripaddr);&lt;/code&gt;&lt;br
     
     
       <category term="CONTIKI,static和extern" scheme="http://yoursite.com/tags/CONTIKI-static%E5%92%8Cextern/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CONTIKI应用之IO口应用</title>
-    <link href="http://yoursite.com/2016/10/20/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BIO%E5%8F%A3%E5%BA%94%E7%94%A8/"/>
-    <id>http://yoursite.com/2016/10/20/CONTIKI/CONTIKI应用之IO口应用/</id>
-    <published>2016-10-20T08:59:33.871Z</published>
-    <updated>2016-10-20T08:59:33.871Z</updated>
-    
-    <content type="html">&lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
-&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port,pin)         PORT_CLEAR_X(port,pin) PORT_CLEAR_X(port,pin)
-#define PORT_TOGGLE(port,pin)        PORT_TOGGLE_X(port,pin) PORT_TOGGLE_X(port,pin)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;PORT_CLEAR和PORT_TOGGLE的宏定义错误。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在开发CONTIKI应用时，遇到的有关IO口的问题和得出的经验都记录在下文，以便以后总结。&lt;/p&gt;
-&lt;p&gt;CONTIKI系统CC2530平台下的IO口驱动有一个BUG，该BUG在port.h文件中&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#define PORT_CLEAR(port
-    
-    </summary>
-    
-    
-      <category term="CONTIKI,I/O口" scheme="http://yoursite.com/tags/CONTIKI-I-O%E5%8F%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CONTIKI应用之Ubuntu环境下开发</title>
-    <link href="http://yoursite.com/2016/10/20/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BUbuntu%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%BC%80%E5%8F%91/"/>
-    <id>http://yoursite.com/2016/10/20/CONTIKI/CONTIKI应用之Ubuntu环境下开发/</id>
-    <published>2016-10-20T08:59:33.871Z</published>
-    <updated>2016-10-20T08:59:33.872Z</updated>
-    
-    <content type="html">&lt;p&gt;CONTIKI系统默认是在Ubuntu下使用SDCC开发的，因为SDCC采用的是GCC编译器，与Windows下的IAR或KEIL还是有很大的不同。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;使用SDCC必须要写好Makefile文件，这样编译器才能在编译时找到相应的文件。&lt;/li&gt;
-&lt;li&gt;因为GCC编译器是使用标准C，所以在IAR上能编译成功不代表在SDCC上也能编译成功。例如我在编译时遇到一个问题，提示“变量初始化的值不能为变量”。这是因为标准C规定变量初始化时一定要为常量，如果要用变量赋值，必须要在函数或宏定义中。&lt;/li&gt;
-&lt;li&gt;因为CC2530的栈空间不够，所以CONTIKI系统CC2530平台上的UDP-IPV6例程有重启的问题。所以对于CC2530平台，在没有修改UIP协议栈的情况下，不能作为ROOT节点。解决方法是使用sensinode分支的源代码，该分支的版本是CONTIKI2.6，修改了部分文件的代码减少堆栈开销。&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;CONTIKI系统默认是在Ubuntu下使用SDCC开发的，因为SDCC采用的是GCC编译器，与Windows下的IAR或KEIL还是有很大的不同。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;使用SDCC必须要写好Makefile文件，这样编译器才能在编译时找到相应的文件。&lt;/li&gt;
-&lt;l
-    
-    </summary>
-    
-    
-      <category term="CONTIKI,Ubuntu" scheme="http://yoursite.com/tags/CONTIKI-Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CONTIKI应用之温湿度传感器DHT11驱动开发</title>
-    <link href="http://yoursite.com/2016/10/20/CONTIKI/CONTIKI%E5%BA%94%E7%94%A8%E4%B9%8BDHT11%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
-    <id>http://yoursite.com/2016/10/20/CONTIKI/CONTIKI应用之DHT11温湿度传感器驱动开发/</id>
-    <published>2016-10-20T08:59:33.870Z</published>
-    <updated>2016-10-20T08:59:33.870Z</updated>
-    
-    <content type="html">&lt;p&gt;参加学校的挑战杯比赛，我们小组的项目是基于CONTIKI系统的，使用CC2530平台，所以需要为传感器开发底层驱动。&lt;/p&gt;
-&lt;p&gt;DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输出公用一个端口，对时序的要求比较高。&lt;/p&gt;
-&lt;p&gt;在开发过程中我遇到了一下几个问题:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;关闭CONTIKI的看门狗才能在程序中调用单片机的IO口。原因可能是打开看门狗后不能用IAR的单步调试。（暂解决）&lt;/li&gt;
-&lt;li&gt;用示波器捕捉波形发现，主机发送开始信号后，DHT11没有进入采集模式，无数据输出。原因是驱动时序出错，当DHT11输出“1”时，没有先等DHT11拉低就进入了下一位的读取，导致整个时序出错。（已解决）&lt;br&gt;&lt;img src=&quot;/images/CONTIKI/DHT11.jpg&quot; alt=&quot;DHT11&quot;&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I-O口设置，这方面出错的可能性很大。&quot;&gt;&lt;a href=&quot;#在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I-O口设置，这方面出错的可能性很大。&quot; class=&quot;headerlink&quot; title=&quot;在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I/O口设置，这方面出错的可能性很大。&quot;&gt;&lt;/a&gt;&lt;strong&gt;在做Contiki开发遇到问题的时候，不要去怀疑系统任务调度或系统时钟，一般这方面出错的几率很小。应该关注时序或I/O口设置，这方面出错的可能性很大。&lt;/strong&gt;&lt;/h3&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;参加学校的挑战杯比赛，我们小组的项目是基于CONTIKI系统的，使用CC2530平台，所以需要为传感器开发底层驱动。&lt;/p&gt;
-&lt;p&gt;DHT11是一款单总线数据格式的温湿度传感器，数据的输入和输出公用一个端口，对时序的要求比较高。&lt;/p&gt;
-&lt;p&gt;在开发过程中我遇到了一下几个问
-    
-    </summary>
-    
-    
-      <category term="CONTIKI,驱动" scheme="http://yoursite.com/tags/CONTIKI-%E9%A9%B1%E5%8A%A8/"/>
     
   </entry>
   
